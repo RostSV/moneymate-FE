@@ -1,0 +1,102 @@
+// Colors
+$black: #0f161a;
+$red-light: #F26C6Bff;
+$blue: #5575A6ff;
+$green-light: #00A084ff;
+$yellow: #F8CA41ff;
+$coral: #EBCD97ff;
+$white: #fcfdfd;
+
+//--text: #0f161a;
+//--background: #fcfdfd;
+//--primary: #009e84;
+//--secondary: #ebce99;
+//--accent: #f8ca3f;
+
+
+
+// Variables
+$body-bg: $white;
+$body-color: $black;
+$font-size-root: 10px;
+$font-size-base: 1.25rem;
+$font-family-sans-serif: 'Poppins', sans-serif;
+$h2-font-size: 5rem;
+$h4-font-size: 2.2rem;
+$h5-font-size: 1.7rem;
+$h2-font-weight: 700;
+
+
+//// Pagination
+//$pagination-bg: #fff;
+//$pagination-font-size: 1.6rem;
+//$pagination-padding-x: 1.5rem;
+//$pagination-padding-y: 0.7rem;
+//$pagination-color: $black;
+//$pagination-border-color: transparent;
+//$pagination-hover-border-color: transparent;
+//$pagination-disabled-border-color: transparent;
+
+// Forms
+//$input-padding-y: 1.15rem;
+//$input-padding-x: 1.6rem;
+//$input-border-color: #7d93ab;
+//$input-bg: #edf0f2;
+//$input-font-size: 1.6rem;
+//$input-font-weight: bold;
+//$input-color: $blue;
+
+// Buttons
+$btn-padding-y: 0.7rem;
+$btn-padding-x: 2rem;
+$btn-font-weight: 600;
+$btn-font-size: 1.6rem;
+$btn-border-radius: 0.4rem;
+$btn-color: $white;
+
+
+// Dropdowns
+$dropdown-bg: $yellow;
+$dropdown-item-padding-y: 0.4rem;
+$dropdown-item-padding-x: 1.6rem;
+$dropdown-link-hover-bg: $yellow;
+$dropdown-link-hover-color: $black;
+$dropdown-link-color: $white;
+$dropdown-link-active-bg: $yellow;
+$dropdown-link-active-color: $black;
+// Modals
+$modal-content-bg: #fff;
+$modal-header-padding: 1.2rem 2.4rem;
+$modal-inner-padding: 2.4rem;
+
+$theme-colors: (
+  "primary": $green-light,
+  "secondary": $yellow,
+  "blue": $blue,
+  "yellow": $yellow,
+  "red": $red-light,
+  "black": $black,
+  "white": #fff,
+  "coral": $coral
+) !default;
+
+
+
+
+$spacer: 4px !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  8: $spacer * 8
+) !default;
+
+// Fonts
+$font-sizes: (
+  16: 1.6rem,
+) !default;

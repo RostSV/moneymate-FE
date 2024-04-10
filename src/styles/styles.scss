@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+//Landing
+@import "../styles/scss/variables.scss";
+
+
+.header{
+
+  position: fixed;
+  height:60px;
+  width:100%;
+
+  .container-fluid{
+    height: 100%;
+
+    .brand-name{
+      font-size: 22px;
+      font-weight: 500;
+      text-shadow:1px 2px 2px #3c5954;
+    }
+  }
+}
+
+.main-content{
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .hero-text{
+
+      margin-top:50px;
+      h2{
+        font-weight: 700;
+        span{
+          font-size: 4rem;
+        }
+      }
+      p{
+        font-size: 1.6rem;
+        text-shadow:1px 1px 1px #9a9f3d9e;
+      }
+
+
+    }
+
+  }
+
+}
+
+.about{
+  h2{
+    font-weight: 700;
+  }
+
+  article{
+    border-radius: 10px;
+
+    p{
+      font-size: 1.4rem;
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+
