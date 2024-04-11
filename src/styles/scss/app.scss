@@ -8,20 +8,24 @@
 // Bootstrap
 @import 'bootstrap/bootstrap.scss';
 
-
-.btn-secondary{
-  --bs-btn-color: #fcfdfd;
-  --bs-btn-active-color: #d5d5d5;
-  --bs-btn-hover-color: #fcfdfd;
-  --bs-btn-hover-bg: #fad66b;
+.t-shadow{
+  text-shadow:1px 1px 1px rgba(60, 89, 84, 0.77);
 }
 
-.b-shadow{
-  text-shadow:1px 1px 1px rgba(60, 89, 84, 0.77);
+.box-shadow{
+  box-shadow: 2px 3px 4px 0px rgba(0,0,0,0.75);
 }
 
 .b-border{
   border-bottom: 2px solid rgb(236 231 231 / 10%);
+}
+
+.top-bar-text{
+  width: 50%
+}
+
+.border-1{
+  border-radius: 1rem;
 }
 
 .t-text{
@@ -123,11 +127,57 @@
   }
 }
 
+
+
+.popover{
+  width: 160px;
+
+  p{
+    span{
+      font-style: italic;
+      opacity: 50%;
+    }
+  }
+
+  .popover-header {
+    text-align: center;
+  }
+
+  .pop-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+      color: $white;
+      padding: 0;
+      width: 45%;
+    }
+  }
+}
+
+//<_____________________________Categories______________________________________>
+
+.category-item{
+  position: relative;
+  .zmdi-more{
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+}
+
+
 @media (max-width: 992px) {
   .dropdown{
     display: none;
   }
 }
 
-
+@media (min-width: 768px) {
+  .category-item{
+    height: 120px;
+  }
+}
 

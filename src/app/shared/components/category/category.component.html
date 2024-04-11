@@ -1,1 +1,24 @@
-<p>category works!</p>
+<!--popover-->
+<ng-template #popContent class="popover">
+  <p class="mb-2" *ngIf="category.description && isMobile">
+    <span>Description:</span>
+    {{category.description}}
+  </p>
+  <div class="pop-controls">
+    <button type="button" class="btn btn-yellow">Edit</button>
+    <button type="button" class="btn btn-danger" >Delete</button>
+  </div>
+</ng-template>
+
+<button class="category-item col col-md-4 btn btn-blue box-shadow rounded-3 mb-3 p-2 w-100"
+     [ngbPopover]="(isTablet || isMobile) ? popContent : null"
+     [popoverTitle]="isMobile ? 'Info' : null">
+
+    <h4 class="category-title" >{{category.name}}</h4>
+    <i class="zmdi zmdi-more"></i>
+
+    <div *ngIf="isTablet">
+      <p class="fst-italic fw-light">{{category.description}}</p>
+    </div>
+</button>
+

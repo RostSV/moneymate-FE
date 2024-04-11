@@ -21,9 +21,17 @@ $body-color: $black;
 $font-size-root: 10px;
 $font-size-base: 1.25rem;
 $font-family-sans-serif: 'Poppins', sans-serif;
+$font-sizes: (
+  "small": 1.2rem,
+  "large": 2.2rem,
+  "xlarge": 3.2rem
+);
 $h2-font-size: 5rem;
+$h3-font-size: 2.8rem;
 $h4-font-size: 2.2rem;
 $h5-font-size: 1.7rem;
+$h6-font-size: 1.5rem;
+$h5-font-weight: 700;
 $h2-font-weight: 700;
 
 
@@ -37,15 +45,6 @@ $h2-font-weight: 700;
 //$pagination-hover-border-color: transparent;
 //$pagination-disabled-border-color: transparent;
 
-// Forms
-//$input-padding-y: 1.15rem;
-//$input-padding-x: 1.6rem;
-//$input-border-color: #7d93ab;
-//$input-bg: #edf0f2;
-//$input-font-size: 1.6rem;
-//$input-font-weight: bold;
-//$input-color: $blue;
-
 // Buttons
 $btn-padding-y: 0.7rem;
 $btn-padding-x: 2rem;
@@ -53,9 +52,10 @@ $btn-font-weight: 600;
 $btn-font-size: 1.6rem;
 $btn-border-radius: 0.4rem;
 $btn-color: $white;
+$btn-disabled-opacity: 0.65;
+$btn-box-shadow: 2px 3px 4px 0px rgba(0,0,0,0.75);
 
-
-// Dropdowns
+  // Dropdowns
 $dropdown-bg: $yellow;
 $dropdown-item-padding-y: 0.4rem;
 $dropdown-item-padding-x: 1.6rem;
@@ -64,23 +64,38 @@ $dropdown-link-hover-color: $black;
 $dropdown-link-color: $white;
 $dropdown-link-active-bg: $yellow;
 $dropdown-link-active-color: $black;
+
 // Modals
-$modal-content-bg: #fff;
+$modal-content-bg: $yellow;
+$modal-content-border-radius: 1rem;
 $modal-header-padding: 1.2rem 2.4rem;
 $modal-inner-padding: 2.4rem;
+
+// Forms
+$input-padding-y: 1.15rem;
+$input-padding-x: 1.6rem;
+$input-border: none;
+$input-bg: $white;
+$input-font-size: 1.6rem;
+$input-font-weight: bold;
+$input-color: $blue;
+
+//Popover
+$popover-header-color: $black;
+
+//Grid
+//$grid-gutter-width: 1rem;
 
 $theme-colors: (
   "primary": $green-light,
   "secondary": $yellow,
   "blue": $blue,
   "yellow": $yellow,
-  "red": $red-light,
+  "danger": $red-light,
   "black": $black,
   "white": #fff,
   "coral": $coral
 ) !default;
-
-
 
 
 $spacer: 4px !default;

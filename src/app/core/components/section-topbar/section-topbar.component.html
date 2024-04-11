@@ -1,0 +1,18 @@
+<div class="mb-4 bg-blue text-white border-primary border-1">
+  <div class="d-flex justify-content-between p-4 ">
+    <div class="top-bar-text">
+      <h2>{{title}}</h2>
+      <p>{{subtitle}}</p>
+    </div>
+    <div class="bg-white border-1 d-flex justify-content-center align-items-center">
+      <img ngSrc='{{titleImgUrl}}' alt="categories" class="img-fluid" height="80" width="100">
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <button class="btn btn-primary text-white mb-3 w-100" (click)="addCategory.emit()">Add Category</button>
+  </div>
+
+</div>
+
+
