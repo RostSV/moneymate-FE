@@ -5,16 +5,9 @@ $blue: #5575A6ff;
 $green-light: #00A084ff;
 $yellow: #F8CA41ff;
 $coral: #EBCD97ff;
-$white: #fcfdfd;
+$white: #f5f7fa;
 
-//--text: #0f161a;
-//--background: #fcfdfd;
-//--primary: #009e84;
-//--secondary: #ebce99;
-//--accent: #f8ca3f;
-
-
-
+$gray: #4f4f4f;
 // Variables
 $body-bg: $white;
 $body-color: $black;
@@ -82,9 +75,17 @@ $input-color: $blue;
 
 //Popover
 $popover-header-color: $black;
+//#f5f7fa
 
-//Grid
-//$grid-gutter-width: 1rem;
+//Cards
+$card-title-color:                  $gray;
+$card-subtitle-color:               $gray;
+$card-border-width:                 3px;
+$card-border-color:                 $green-light;
+$card-border-radius:                1rem;
+$card-color:                          $gray;
+$card-inner-border-radius:          1rem;
+
 
 $theme-colors: (
   "primary": $green-light,
@@ -94,7 +95,8 @@ $theme-colors: (
   "danger": $red-light,
   "black": $black,
   "white": #fff,
-  "coral": $coral
+  "coral": $coral,
+  "gray": $gray
 ) !default;
 
 

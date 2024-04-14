@@ -13,7 +13,8 @@ export class SectionTopbarComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() titleImgUrl: string = '';
+  @Input() addButtonText: string = '';
 
-  @Output() addCategory = new EventEmitter<void>();
+  @Output() add = new EventEmitter<void>();
 }
 

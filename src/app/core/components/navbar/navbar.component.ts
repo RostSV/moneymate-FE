@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {AsyncPipe, NgClass, NgIf, NgOptimizedImage} from "@angular/common";
-import {Route, Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {Observable} from "rxjs";
 import {UserModel} from "../../../shared/models/user.model";
 import {UserService} from "../../../user.service";

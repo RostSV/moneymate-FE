@@ -1,8 +1,8 @@
-import {UserRole} from "./user-role";
+import {UserRoleEnum} from "./user-role.enum";
 
 export interface UserModel {
   id: number;
   name: string;
   email: string;
-  role: UserRole;
+  role: UserRoleEnum;
 }

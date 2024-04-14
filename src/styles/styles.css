@@ -1,46 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-.header {
-  position: fixed;
-  height: 60px;
-  width: 100%;
-}
-.header .container-fluid {
-  height: 100%;
-}
-.header .container-fluid .brand-name {
-  font-size: 22px;
-  font-weight: 500;
-  text-shadow: 1px 2px 2px #3c5954;
-}
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 72 | @import 'bootstrap/scss/bootstrap';
+ *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   styles.scss 72:9  root stylesheet */
 
-.main-content .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 72 \2502  @import 'bootstrap/scss/bootstrap';\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   styles.scss 72:9  root stylesheet";
 }
-.main-content .hero .hero-text {
-  margin-top: 50px;
-}
-.main-content .hero .hero-text h2 {
-  font-weight: 700;
-}
-.main-content .hero .hero-text h2 span {
-  font-size: 4rem;
-}
-.main-content .hero .hero-text p {
-  font-size: 1.6rem;
-  text-shadow: 1px 1px 1px rgba(154, 159, 61, 0.6196078431);
-}
-
-.about h2 {
-  font-weight: 700;
-}
-.about article {
-  border-radius: 10px;
-}
-.about article p {
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-/*# sourceMappingURL=styles.css.map */

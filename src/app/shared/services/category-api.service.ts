@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {CategoryModel} from "../models/category.model";
 import {map} from "rxjs";
+import {CategoryItemComponent} from "../../features/category/category-item/category-item.component";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,9 @@ export class CategoryApiService {
       map( categories => categories
         .filter(category => category.name === name).length > 0)
     )
+  }
+
+  deleteCategory($event: CategoryModel) {
+    return this.http.delete<CategoryItemComponent>(this.apiUrl + '/' + $event.id);
   }
 }
