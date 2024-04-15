@@ -7,6 +7,80 @@
 
 // Bootstrap
 @import 'bootstrap/bootstrap.scss';
+.btn-primary{
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+  &:active {
+    color: $white !important;
+  }
+}
+
+p{
+  margin-bottom: 0;
+}
+.section-container{
+  max-width: 1600px;
+}
+.header{
+
+  position: fixed;
+  height:60px;
+  width:100%;
+
+  .container-fluid{
+    height: 100%;
+
+    .brand-name{
+      font-size: 22px;
+      font-weight: 500;
+      text-shadow:1px 2px 2px #3c5954;
+    }
+  }
+}
+
+.main-content{
+  .hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .hero-text{
+
+      margin-top:50px;
+      h2{
+        font-weight: 700;
+        span{
+          font-size: 4rem;
+        }
+      }
+      p{
+        font-size: 1.6rem;
+        text-shadow:1px 1px 1px #9a9f3d9e;
+      }
+
+
+    }
+
+  }
+
+}
+
+.about{
+  h2{
+    font-weight: 700;
+  }
+
+  article{
+    border-radius: 10px;
+
+    p{
+      font-size: 1.4rem;
+      margin: 0;
+    }
+  }
+}
 
 .t-shadow{
   text-shadow:1px 1px 1px rgba(60, 89, 84, 0.77);
@@ -20,11 +94,6 @@
   .b-border{
     border-bottom: 2px solid rgb(236 231 231 / 10%);
   }
-
-.b-s{
-  box-shadow: rgba(0,0,0 ,0.07), 0 10px 20px -2px rgba(0,0,0, 0.04);
-}
-
   .top-bar-text{
     width: 50%
   }
@@ -202,5 +271,36 @@
       }
     }
   }
+
+  .account-body{
+    //background-color: $green-light;
+
+    .account-header{
+      border-radius: 5rem;
+      //border: 2px solid $green-light;
+      background-color: white;
+    }
+    .transaction-block{
+      border: 2px solid $gray-300;
+      border-radius: 1rem;
+      img {
+        max-width: 10%;
+        height: auto;
+        width: auto\9;
+      }
+
+      p{
+        color: $gray-500;
+        font-weight: 500;
+      }
+
+    }
+
+
+
+  }
+
+
+
 
 

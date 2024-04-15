@@ -5,7 +5,7 @@ import {TransactionType} from "./transaction-type.enum";
 
 export interface TransactionModel{
   id?: number,
-  date?: Date,
+  date: Date,
   amount: number,
   description?: string,
   category: CategoryModel,

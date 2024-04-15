@@ -1,7 +1,33 @@
-<div *ngIf="account$ | async as account">
-  {{account.name}}
-</div>
+<app-section-container>
+  <div class="account-body container">
+    <div  class="account-header shadow-sm row p-4 mb-4">
+      <h2 class="account-header-title col-12 text-center text-primary">{{account?.balance | currency}}</h2>
+      <div class="account-header-subtitle col-12 text-center">Manage your account settings</div>
+    </div>
 
-<div *ngFor="let transaction of transactions$ | async">
-  <h4>{{transaction.amount}}</h4>
-</div>
+    <div class="account-body-content row row-cols-md-2">
+
+      <div class="account-toolbar col-12 col-md-4">
+        <button class="btn btn-primary mb-2" >Add Transaction</button>
+        <button class="btn btn-info mb-2">Add Category</button>
+      </div>
+
+      <div ngbScrollSpy class="transaction-block text-center col-12 col-md-8" style="height: 280px">
+        <div class="p-2">
+          <div *ngFor="let transaction of transactions$ | async" class="bg-twhite row mb-4 p-3 border-1 shadow-sm align-items-center">
+            <div class="col-6 col-md-4 d-flex align-items-center" [class.text-danger]="transaction.type == TransactionType.EXPENSE">
+              <img src='./assets/media/{{transaction.currency.code}}.png' alt="icon">
+              <h4 class="px-2 normal" [class.negative]="transaction.type == TransactionType.EXPENSE">{{transaction.amount | currency : '':''}}</h4>
+            </div>
+            <div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction.category.name}}</p></div>
+            <div class="col-6 col-md-4 text-center"><h5>{{transaction.date | timeDate}}</h5></div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</app-section-container>
+

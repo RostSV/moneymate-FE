@@ -1,14 +1,22 @@
 // Colors
 $black: #0f161a;
 $red-light: #F26C6Bff;
-$blue: #5575A6ff;
+$blue: #115dd0;
 $green-light: #00A084ff;
 $yellow: #F8CA41ff;
 $coral: #EBCD97ff;
 $white: #f5f7fa;
-
+$total-white: #ffffff;
 $gray: #4f4f4f;
-// Variables
+
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+
+
+$grid-gutter-width:1rem;
+$enable-shadows: true;
+
+  // Variables
 $body-bg: $white;
 $body-color: $black;
 $font-size-root: 10px;
@@ -44,9 +52,10 @@ $btn-padding-x: 2rem;
 $btn-font-weight: 600;
 $btn-font-size: 1.6rem;
 $btn-border-radius: 0.4rem;
-$btn-color: $white;
+$btn-color: $white !important;
 $btn-disabled-opacity: 0.65;
 $btn-box-shadow: 2px 3px 4px 0px rgba(0,0,0,0.75);
+$btn-link-color:red;
 
   // Dropdowns
 $dropdown-bg: $yellow;
@@ -91,13 +100,17 @@ $theme-colors: (
   "primary": $green-light,
   "secondary": $yellow,
   "blue": $blue,
+  "info": $gray-500,
   "yellow": $yellow,
   "danger": $red-light,
   "black": $black,
-  "white": #fff,
+  "white": $total-white,
   "coral": $coral,
-  "gray": $gray
+  "gray": $gray,
+
+
 ) !default;
+
 
 
 $spacer: 4px !default;
@@ -117,3 +130,5 @@ $spacers: (
 $font-sizes: (
   16: 1.6rem,
 ) !default;
+
+$headings-margin-bottom: 0;

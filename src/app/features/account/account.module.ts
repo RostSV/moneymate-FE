@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {AccountItemComponent} from "./account-item/account-item.component";
 import {AccountListComponent} from "./account-list/account-list.component";
 import {SectionContainerComponent} from "../../core/components/section-container/section-container.component";
@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgModule} from "@angular/core";
 import {PieChartModule} from "@swimlane/ngx-charts";
+import {TimeDatePipe} from "../../shared/time-date.pipe";
 
 
 
@@ -26,7 +27,9 @@ import {PieChartModule} from "@swimlane/ngx-charts";
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    PieChartModule
+    PieChartModule,
+    NgOptimizedImage,
+    TimeDatePipe
   ]
 })
 export class AccountModule { }

@@ -5,6 +5,7 @@ import {AccountModel} from "../../../shared/models/account.model";
 import {AccountApiService} from "../../../shared/services/account-api.service";
 import {TransactionApiService} from "../../../shared/services/transaction-api.service";
 import {TransactionModel} from "../../../shared/models/transaction.model";
+import {TransactionType} from "../../../shared/models/transaction-type.enum";
 
 @Component({
   selector: 'app-account-info',
@@ -16,6 +17,8 @@ export class AccountInfoComponent implements OnInit{
   transactions$: Observable<TransactionModel[] | undefined>;
   private refreshSubject = new BehaviorSubject(undefined);
   id: number = 0;
+  account: AccountModel | undefined;
+
   constructor(private router : ActivatedRoute,
               private accountService: AccountApiService,
               private transactionService: TransactionApiService){
@@ -33,5 +36,10 @@ export class AccountInfoComponent implements OnInit{
     this.account$ = this.refreshSubject.pipe(switchMap(() => this.accountService.getAccountById(this.id)));
     this.transactions$ = this.transactionService.getTransactionsByAccountId(this.id);
 
+    this.account$.subscribe(account => {
+      this.account = account;
+    });
   }
+
+  protected readonly TransactionType = TransactionType;
 }
