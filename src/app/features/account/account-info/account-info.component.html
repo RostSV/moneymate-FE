@@ -2,3 +2,6 @@
   {{account.name}}
 </div>
 
+<div *ngFor="let transaction of transactions$ | async">
+  <h4>{{transaction.amount}}</h4>
+</div>
