@@ -9,7 +9,7 @@ import {TimeDatePipe} from "./shared/time-date.pipe";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CategoriesModule, AccountModule, NgxChartsModule, TimeDatePipe],
+  imports: [RouterOutlet, NavbarComponent, CategoriesModule, AccountModule, NgxChartsModule, TimeDatePipe,NgxChartsModule],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

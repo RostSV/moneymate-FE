@@ -13,7 +13,7 @@ export class TimeDatePipe implements PipeTransform {
     const now = new Date();
 
     if(date.getDay() == now.getDay() && date.getMonth() == now.getMonth() && date.getFullYear() == now.getFullYear()){
-      return 'Today ' + date.getHours() + ':' + date.getMinutes();
+      return 'Today ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
     }
 
     if(date.getDay() == now.getDay() - 1 && date.getMonth() == now.getMonth() && date.getFullYear() == now.getFullYear()){

@@ -1,0 +1,6 @@
+<div class="col-6 col-md-4 d-flex align-items-center" [class.text-danger]="transaction?.type == TransactionType.EXPENSE">
+  <img src='./assets/media/{{transaction?.currency?.code}}.png' alt="icon">
+  <h4 class="px-2 normal" [class.negative]="transaction?.type == TransactionType.EXPENSE">{{transaction?.amount | currency : '':''}}</h4>
+</div>
+<div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction?.category?.name}}</p></div>
+<div class="col-6 col-md-4 text-center"><h5>{{transaction?.date | timeDate}}</h5></div>

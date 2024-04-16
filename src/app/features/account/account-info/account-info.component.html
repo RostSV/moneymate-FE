@@ -5,28 +5,22 @@
       <div class="account-header-subtitle col-12 text-center">Manage your account settings</div>
     </div>
 
-    <div class="account-body-content row row-cols-md-2">
+    <div class="account-body-content row justify-content-center">
 
-      <div class="account-toolbar col-12 col-md-4">
-        <button class="btn btn-primary mb-2" >Add Transaction</button>
-        <button class="btn btn-info mb-2">Add Category</button>
-      </div>
-
-      <div ngbScrollSpy class="transaction-block text-center col-12 col-md-8" style="height: 280px">
-        <div class="p-2">
-          <div *ngFor="let transaction of transactions$ | async" class="bg-twhite row mb-4 p-3 border-1 shadow-sm align-items-center">
-            <div class="col-6 col-md-4 d-flex align-items-center" [class.text-danger]="transaction.type == TransactionType.EXPENSE">
-              <img src='./assets/media/{{transaction.currency.code}}.png' alt="icon">
-              <h4 class="px-2 normal" [class.negative]="transaction.type == TransactionType.EXPENSE">{{transaction.amount | currency : '':''}}</h4>
-            </div>
-            <div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction.category.name}}</p></div>
-            <div class="col-6 col-md-4 text-center"><h5>{{transaction.date | timeDate}}</h5></div>
+      <div class="account-toolbar row col-12 row-cols-2 row-cols-md-1 col-md-4 mb-3">
+        <div>
+          <div class="col-6 col-md-12">
+            <app-adding-button label="Transaction" (newItemEvent)="addTransaction()" ></app-adding-button>
+          </div>
+          <div class="col-6 col-md-12">
+            <app-settings-button (settingsEvent)="(openSettings())"></app-settings-button>
           </div>
         </div>
       </div>
 
+      <app-transactions-list (changeIntervalEvent)="changeInterval($event)" class="col-12 col-md-8 mb-3" [transactions]="transactions$ | async"></app-transactions-list>
 
-
+      <app-pie-chart class="row" [single]="pieChartData" ></app-pie-chart>
     </div>
   </div>
 </app-section-container>

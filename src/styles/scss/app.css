@@ -13295,6 +13295,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.btn {
+  height: 100%;
+  box-shadow: 2px 2px 5px 0 rgba(15, 22, 26, 0.75);
+}
+.btn:active {
+  color: #4f4f4f !important;
+}
+
 .btn-primary {
   color: #f5f7fa;
 }
@@ -13303,6 +13311,16 @@ textarea.form-control-lg {
 }
 .btn-primary:active {
   color: #f5f7fa !important;
+}
+.btn-primary .zmdi-plus {
+  font-weight: 900;
+}
+
+.btn-info:hover {
+  color: #4f4f4f;
+}
+.btn-info:active {
+  color: #4f4f4f;
 }
 
 p {
@@ -13489,16 +13507,6 @@ p {
   top: 0.5rem;
 }
 
-@media (max-width: 992px) {
-  .dropdown {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  .category-item {
-    height: 120px;
-  }
-}
 .form-control::placeholder {
   color: rgba(85, 118, 166, 0.5) !important;
 }
@@ -13518,18 +13526,71 @@ p {
   border-radius: 5rem;
   background-color: white;
 }
-.account-body .transaction-block {
+
+.transaction-block {
   border: 2px solid #dee2e6;
   border-radius: 1rem;
 }
-.account-body .transaction-block img {
-  max-width: 10%;
+.transaction-block img {
+  max-width: 15%;
   height: auto;
   width: auto\9 ;
 }
-.account-body .transaction-block p {
+.transaction-block p {
   color: #adb5bd;
   font-weight: 500;
+}
+.transaction-block .transaction-scroll {
+  height: 400px;
+  max-height: 500px;
+}
+.transaction-block .btn-group {
+  border: 2px solid #adb5bd;
+}
+.transaction-block .btn-group button {
+  border: none;
+}
+.transaction-block .btn-group button:not(:last-child) {
+  margin-right: 3px;
+}
+.transaction-block .btn-group .active {
+  transition: all 0.35s ease;
+  color: #4f4f4f;
+}
+
+.advanced-pie-legend {
+  margin-left: 25px;
+}
+.advanced-pie-legend .total-value {
+  display: none;
+}
+.advanced-pie-legend .total-label {
+  display: none;
+}
+.advanced-pie-legend .item-percent {
+  display: none;
+}
+
+.apple-chart {
+  border: 2px solid #dee2e6;
+  border-radius: 1rem;
+  padding: 0;
+  max-height: 150px;
+}
+
+@media (max-width: 992px) {
+  .dropdown {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .category-item {
+    height: 120px;
+  }
+  .apple-chart {
+    height: 50vh;
+    max-height: 200px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -26,6 +26,7 @@ export class CreateAccountFormComponent implements OnInit{
   ngOnInit() {
     this.currencyApiService.getCurrencies().subscribe(currencies => {
       this.currencies = currencies;
+      //TODO refactor this
       this.selectedType = AccountType.PERSONAL;
       this.selectedCurrencyCode = this.currencies
         .find(currency => currency.code === environment.defaultCurrencyCode)?.code;

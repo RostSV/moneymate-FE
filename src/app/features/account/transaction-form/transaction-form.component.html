@@ -1,0 +1,68 @@
+<div class="border-yellow" >
+  <div class="modal-header text-white font-700 border-0 justify-content-between">
+    <h3 class="modal-title">Add new account</h3>
+    <h4 class="close" aria-label="Close" (click)="close()">
+      <i class="zmdi zmdi-close"></i>
+    </h4>
+
+
+  </div>
+
+  <form [class.was-validated]="form.submitted"
+        (submit)="onSubmit(form)" #form=ngForm>
+    <div class="container">
+      <div class="form-group mb-4">
+        <div class="input-group has-validation mb-3">
+          <input type="text"
+                 required
+                 name="amound"
+                 id="amount"
+                 placeholder="amount"
+                 class="form-control"
+                 [(ngModel)]="transaction.amount">
+        </div>
+
+        <div class="input-group has-validation mb-3">
+          <input type="text"
+                 id="description"
+                 name="description"
+                 class="form-control"
+                 placeholder="Description"
+                 [(ngModel)]="transaction.description">
+        </div>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Type</label>
+          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="selectedCategoryName" name="type">
+            <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+          </select>
+        </div>
+
+
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect02">Currency</label>
+          <select class="form-select" id="inputGroupSelect02" [(ngModel)]="selectedCurrencyCode" name="currency">
+            <option *ngFor="let currency of currencies" value="{{currency.code}}">{{currency.code}}</option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect03">Type</label>
+          <select class="form-select" id="inputGroupSelect03" [(ngModel)]="selectedType" name="type">
+            <option *ngFor="let type of transactionTypes" value="{{type}}">{{type}}</option>
+          </select>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="modal-footer justify-content-center border-top-0">
+      <button type="submit" class="btn btn-primary text-white" >Submit</button>
+    </div>
+  </form>
+</div>

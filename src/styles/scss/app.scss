@@ -7,6 +7,16 @@
 
 // Bootstrap
 @import 'bootstrap/bootstrap.scss';
+//Buttons
+.btn{
+  height: 100%;
+  box-shadow: 2px 2px 5px 0 rgba($black, 0.75);
+
+  &:active{
+    color: $gray !important;
+  }
+}
+
 .btn-primary{
   color: $white;
   &:hover {
@@ -15,8 +25,24 @@
   &:active {
     color: $white !important;
   }
+
+  .zmdi-plus{
+    font-weight: 900;
+  }
 }
 
+.btn-info{
+  //box-shadow:none;
+  &:hover {
+    color: $gray;
+  }
+
+  &:active{
+    color: $gray;
+
+  }
+}
+//----------------------------------
 p{
   margin-bottom: 0;
 }
@@ -94,6 +120,7 @@ p{
   .b-border{
     border-bottom: 2px solid rgb(236 231 231 / 10%);
   }
+
   .top-bar-text{
     width: 50%
   }
@@ -243,17 +270,7 @@ p{
   }
 
 
-  @media (max-width: 992px) {
-    .dropdown{
-      display: none;
-    }
-  }
 
-  @media (min-width: 768px) {
-    .category-item{
-      height: 120px;
-    }
-  }
 
   .form-control::placeholder {
     color: rgba(85, 118, 166, 0.5) !important;
@@ -271,6 +288,7 @@ p{
       }
     }
   }
+  //Account
 
   .account-body{
     //background-color: $green-light;
@@ -280,26 +298,89 @@ p{
       //border: 2px solid $green-light;
       background-color: white;
     }
-    .transaction-block{
-      border: 2px solid $gray-300;
-      border-radius: 1rem;
-      img {
-        max-width: 10%;
-        height: auto;
-        width: auto\9;
-      }
-
-      p{
-        color: $gray-500;
-        font-weight: 500;
-      }
-
-    }
-
-
 
   }
 
+
+.transaction-block{
+  border: 2px solid $gray-300;
+  border-radius: 1rem;
+  img {
+    max-width: 15%;
+    height: auto;
+    width: auto\9;
+  }
+
+  p{
+    color: $gray-500;
+    font-weight: 500;
+  }
+
+  .transaction-scroll{
+    height: 400px;
+    max-height: 500px;
+  }
+
+  .btn-group{
+    border: 2px solid $gray-500;
+    button{
+      border: none;
+    }
+
+    button:not(:last-child) {
+      margin-right: 3px;
+    }
+
+    .active{
+      transition: all 0.35s ease;
+      color: $gray;
+    }
+  }
+
+
+}
+
+
+//CHARTS
+.advanced-pie-legend{
+
+  margin-left: 25px;
+
+  .total-value{
+    display: none;
+  }
+
+  .total-label{
+    display:none;
+  }
+
+  .item-percent{
+    display:none;
+  }
+}
+
+.apple-chart{
+  border: 2px solid $gray-300;
+  border-radius: 1rem;
+  padding: 0;
+  max-height: 150px;
+}
+
+@media (max-width: 992px) {
+  .dropdown{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .category-item{
+    height: 120px;
+  }
+  .apple-chart{
+    height: 50vh;
+    max-height: 200px;
+  }
+}
 
 
 

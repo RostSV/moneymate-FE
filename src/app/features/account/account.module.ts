@@ -10,6 +10,12 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgModule} from "@angular/core";
 import {PieChartModule} from "@swimlane/ngx-charts";
 import {TimeDatePipe} from "../../shared/time-date.pipe";
+import {AddingButtonComponent} from "../../shared/components/buttons/adding-button/adding-button.component";
+import {SettingsButtonComponent} from "../../shared/components/buttons/settings-button/settings-button.component";
+import {
+  TransactionsListComponent
+} from "../../shared/components/transaction/transactions-list/transactions-list.component";
+import {PieChartComponent} from "../../shared/components/charts/pie-chart/pie-chart.component";
 
 
 
@@ -20,16 +26,20 @@ import {TimeDatePipe} from "../../shared/time-date.pipe";
     AccountInfoComponent,
     CreateAccountFormComponent,
   ],
-  imports: [
-    CommonModule,
-    SectionContainerComponent,
-    SectionTopbarComponent,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule,
-    PieChartModule,
-    NgOptimizedImage,
-    TimeDatePipe
-  ]
+    imports: [
+        CommonModule,
+        SectionContainerComponent,
+        SectionTopbarComponent,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule,
+        PieChartModule,
+        NgOptimizedImage,
+        TimeDatePipe,
+        AddingButtonComponent,
+        SettingsButtonComponent,
+        TransactionsListComponent,
+        PieChartComponent
+    ]
 })
 export class AccountModule { }

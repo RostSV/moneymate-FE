@@ -8,4 +8,8 @@ export const environment = {
   nameMaxLength: 15,
   descrMaxLength: 40,
   defaultCurrencyCode: 'USD',
+  defaultDaysLimit: 7,
+  week : 7,
+  month : 30,
+  quarter : 90,
 };
