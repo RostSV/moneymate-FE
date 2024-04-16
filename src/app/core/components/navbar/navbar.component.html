@@ -35,7 +35,7 @@
     </ng-container>
 
     <ng-container *ngIf="(user$ | async) as user">
-      <div ngbDropdown class="mt-lg-0 mx-2" [title]="user.name">
+      <div ngbDropdown class="mt-lg-0 mx-2" [title]="user.firstName">
         <button class="settings btn btn-secondary b-shadow" type="button" id="dropdownBasic1" ngbDropdownToggle>
           <i class="zmdi zmdi-settings"></i>
         </button>

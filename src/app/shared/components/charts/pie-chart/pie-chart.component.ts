@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgxChartsModule, ScaleType} from "@swimlane/ngx-charts";
-import {TotalExpenseIncomeModel} from "../../../models/chartModels/total-expense-income.model";
 
 @Component({
   selector: 'app-pie-chart',
@@ -23,6 +22,9 @@ export class PieChartComponent{
     group: ScaleType.Ordinal,
     domain: ['#00A084', '#F26C6B']
   };
+
+  constructor() {
+  }
 
 
 }

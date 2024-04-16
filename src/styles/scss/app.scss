@@ -10,6 +10,7 @@
 //Buttons
 .btn{
   height: 100%;
+  max-height: 60px;
   box-shadow: 2px 2px 5px 0 rgba($black, 0.75);
 
   &:active{
@@ -317,7 +318,7 @@ p{
   }
 
   .transaction-scroll{
-    height: 400px;
+    min-height: 200px;
     max-height: 500px;
   }
 
@@ -380,8 +381,42 @@ p{
     height: 50vh;
     max-height: 200px;
   }
+  .account-toolbar{
+    .content{
+      border-radius: 1rem;
+      border: 2px solid $gray-300;
+
+      .info{
+        i{
+          font-size: 5rem;
+          color: $gray-500;
+        }
+
+        .account-info{
+          border-radius: 1rem;
+          background-color: $total-white;
+
+          span{
+            font-weight: 500;
+            color: $black;
+          }
+
+          p{
+            padding-bottom: 0.5rem;
+            color: $gray-600;
+          }
+        }
+      }
+    }
+  }
 }
 
+
+.no-content{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 
 

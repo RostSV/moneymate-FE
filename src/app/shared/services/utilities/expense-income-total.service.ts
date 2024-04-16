@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {TransactionApiService} from "../transaction-api.service";
 import {TotalExpenseIncomeModel} from "../../models/chartModels/total-expense-income.model";
 import {TransactionModel} from "../../models/transaction.model";
 

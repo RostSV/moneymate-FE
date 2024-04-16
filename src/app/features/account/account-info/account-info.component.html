@@ -8,12 +8,33 @@
     <div class="account-body-content row justify-content-center">
 
       <div class="account-toolbar row col-12 row-cols-2 row-cols-md-1 col-md-4 mb-3">
-        <div>
-          <div class="col-6 col-md-12">
-            <app-adding-button label="Transaction" (newItemEvent)="addTransaction()" ></app-adding-button>
+
+        <div class="col-12 col-md-11 content p-md-3">
+          <div class="info d-none d-md-block mb-md-3">
+            <div class="row rows-cols-1">
+              <div class="text-center">
+                <i class="zmdi zmdi-account-circle"></i>
+                <h5 *ngIf="account?.createdBy?.firstName" class="fst-italic">Hello {{account?.createdBy?.firstName}} </h5>
+
+                <div class="account-info my-3 p-2 text-start">
+                  <h6 class="text-center mb-2">Account info</h6>
+                  <p><span>Name: </span>{{account?.name}}</p>
+                  <p *ngIf="account?.description" class="lh-sm"><span>Desc: </span>{{account?.description}}</p>
+                  <p><span>Type: </span>{{account?.type}}</p>
+                  <p *ngIf="account?.currency?.name"><span>Currency: </span>{{account?.currency?.name}}</p>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div class="col-6 col-md-12">
-            <app-settings-button (settingsEvent)="(openSettings())"></app-settings-button>
+
+          <div class="row col-12 row-cols-2 align-items-md-around g-md-0">
+            <div class="col-6 col-md-12 align-items-md-end mb-md-3">
+              <app-adding-button label="Transaction" (newItemEvent)="addTransaction()" ></app-adding-button>
+            </div>
+            <div class="col-6 col-md-12">
+              <app-settings-button (settingsEvent)="(openSettings())"></app-settings-button>
+            </div>
           </div>
         </div>
       </div>

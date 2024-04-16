@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BehaviorSubject, Observable, Subject, Subscription, switchMap, take, takeUntil} from "rxjs";
+import {BehaviorSubject, Observable, switchMap} from "rxjs";
 import {AccountModel} from "../../../shared/models/account.model";
 import {AccountApiService} from "../../../shared/services/account-api.service";
 import {TransactionApiService} from "../../../shared/services/transaction-api.service";
@@ -50,21 +50,19 @@ export class AccountInfoComponent implements OnInit{
       this.account = account;
     });
 
+
+
     this.transactions$
       .subscribe(transactions => {
         if (transactions) {
           this.pieChartData = [...this.calculator.calculateTotal(transactions)];
-          console.log(this.pieChartData);
         }
       });
 
-
   }
 
-
-
   addTransaction() {
-
+    console.log(this.account);
     const modalRef = this.modalService.open(TransactionFormComponent, {centered: true});
     modalRef.componentInstance.account = this.account;
     modalRef.result

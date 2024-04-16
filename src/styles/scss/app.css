@@ -13297,6 +13297,7 @@ textarea.form-control-lg {
 }
 .btn {
   height: 100%;
+  max-height: 60px;
   box-shadow: 2px 2px 5px 0 rgba(15, 22, 26, 0.75);
 }
 .btn:active {
@@ -13541,7 +13542,7 @@ p {
   font-weight: 500;
 }
 .transaction-block .transaction-scroll {
-  height: 400px;
+  min-height: 200px;
   max-height: 500px;
 }
 .transaction-block .btn-group {
@@ -13591,6 +13592,31 @@ p {
     height: 50vh;
     max-height: 200px;
   }
+  .account-toolbar .content {
+    border-radius: 1rem;
+    border: 2px solid #dee2e6;
+  }
+  .account-toolbar .content .info i {
+    font-size: 5rem;
+    color: #adb5bd;
+  }
+  .account-toolbar .content .info .account-info {
+    border-radius: 1rem;
+    background-color: #ffffff;
+  }
+  .account-toolbar .content .info .account-info span {
+    font-weight: 500;
+    color: #0f161a;
+  }
+  .account-toolbar .content .info .account-info p {
+    padding-bottom: 0.5rem;
+    color: #6c757d;
+  }
+}
+.no-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=app.css.map */

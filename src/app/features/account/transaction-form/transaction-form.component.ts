@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CurrencyModel} from "../../../shared/models/currency.model";
 import {CurrencyApiService} from "../../../shared/services/currency-api.service";
 import {AccountApiService} from "../../../shared/services/account-api.service";

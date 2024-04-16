@@ -1,8 +1,13 @@
 <div class="col-12 apple-chart">
-  <ngx-charts-advanced-pie-chart
-    [results]="single"
-    [gradient]="gradient"
-    [scheme]="colorScheme"
+
+  <div *ngIf="!single || single[0]?.value === 0" class="p-6 no-content text-gray justify-content-center d-flex text-center">
+    <h5 class="w-75">No available activity yet.</h5>
+  </div>
+
+  <ngx-charts-advanced-pie-chart *ngIf="single && single[0]?.value !== 0"
+                                 [results]="single"
+                                 [gradient]="gradient"
+                                 [scheme]="colorScheme"
   >
   </ngx-charts-advanced-pie-chart>
 </div>

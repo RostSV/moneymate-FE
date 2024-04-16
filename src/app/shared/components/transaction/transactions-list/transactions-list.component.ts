@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {TransactionType} from "../../../models/transaction-type.enum";
-import {AsyncPipe, CurrencyPipe, NgForOf} from "@angular/common";
+import {AsyncPipe, CurrencyPipe, NgForOf, NgIf} from "@angular/common";
 import {NgbScrollSpy} from "@ng-bootstrap/ng-bootstrap";
 import {TimeDatePipe} from "../../../time-date.pipe";
-import {Observable} from "rxjs";
 import {TransactionModel} from "../../../models/transaction.model";
 import {TransactionItemComponent} from "../transaction-item/transaction-item.component";
 import {environment} from "../../../../../environments/environment.development";
@@ -17,7 +15,8 @@ import {environment} from "../../../../../environments/environment.development";
     NgForOf,
     NgbScrollSpy,
     TimeDatePipe,
-    TransactionItemComponent
+    TransactionItemComponent,
+    NgIf
   ],
   templateUrl: './transactions-list.component.html'
 })
@@ -27,6 +26,11 @@ export class TransactionsListComponent {
   @Output() changeIntervalEvent = new EventEmitter<number>();
   protected readonly environment = environment;
   days: number = environment.defaultDaysLimit;
+  isEmpty: boolean = true;
+
+  constructor() {
+
+  }
 
   changeInterval(_days: number) {
     this.days = _days;
