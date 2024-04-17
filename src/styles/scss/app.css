@@ -13346,23 +13346,30 @@ p {
   text-shadow: 1px 2px 2px #3c5954;
 }
 
-.main-content .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.hero {
+  padding-top: 50px;
 }
-.main-content .hero .hero-text {
-  margin-top: 50px;
-}
-.main-content .hero .hero-text h2, .main-content .hero .hero-text .h2 {
+.hero .hero-text h2, .hero .hero-text .h2 {
   font-weight: 700;
 }
-.main-content .hero .hero-text h2 span, .main-content .hero .hero-text .h2 span {
-  font-size: 4rem;
+.hero .hero-text h2 span, .hero .hero-text .h2 span {
+  font-size: 1em;
 }
-.main-content .hero .hero-text p {
+.hero .hero-text p {
   font-size: 1.6rem;
   text-shadow: 1px 1px 1px rgba(154, 159, 61, 0.6196078431);
+}
+
+.how-works {
+  border: 2px solid rgba(236, 231, 231, 0.1);
+  border-right: none;
+  border-left: none;
+}
+.how-works h2, .how-works .h2 {
+  font-weight: 600;
+}
+.how-works p {
+  font-size: 1.4rem;
 }
 
 .about h2, .about .h2 {
@@ -13374,6 +13381,22 @@ p {
 .about article p {
   font-size: 1.4rem;
   margin: 0;
+}
+
+.why-block article {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.why-block article span {
+  font-weight: 600;
+  font-style: italic;
+}
+.why-block article i {
+  font-size: 3.5rem;
 }
 
 .t-shadow {
@@ -13582,6 +13605,33 @@ p {
 @media (max-width: 992px) {
   .dropdown {
     display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .lending h2, .lending .h2 {
+    font-size: 8rem;
+  }
+  .lending .hero-text p {
+    font-size: 2.4rem;
+  }
+  .lending .how-works {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .lending .how-works p {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .lending .about article {
+    padding: 50px !important;
+  }
+  .lending .about article p {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 992px) {
+  .about article p {
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 768px) {
