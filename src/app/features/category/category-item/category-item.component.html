@@ -1,16 +1,16 @@
 <!--popover-->
 <ng-template #popContent class="popover">
-  <p class="mb-2" *ngIf="category.description && isMobile">
+  <p class="my-2 " *ngIf="category.description && isMobile">
     <span>Description:</span>
     {{category.description}}
   </p>
   <div class="pop-controls">
-    <button type="button" class="btn btn-yellow">Edit</button>
-    <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <button disabled type="button" class="btn btn-yellow">Edit</button>
+    <button disabled type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
   </div>
 </ng-template>
 
-<button class="category-item col col-md-4 btn btn-blue box-shadow rounded-3 mb-3 p-2 w-100"
+<button class="category-item col col-md-4 btn btn-lightblue box-shadow rounded-3 mb-3 p-2 w-100"
      [ngbPopover]="(isTablet || isMobile) ? popContent : null"
      [popoverTitle]="isMobile ? 'Info' : null">
 

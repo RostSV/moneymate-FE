@@ -11,7 +11,7 @@
 .btn{
   height: 100%;
   max-height: 60px;
-  box-shadow: 2px 2px 5px 0 rgba($black, 0.75);
+  box-shadow: 1px 1px 3px 0 rgba($black, 0.65);
 
   &:active{
     color: $gray !important;
@@ -32,6 +32,25 @@
   }
 }
 
+.btn-secondary{
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+  &:active {
+    color: $white !important;
+  }
+}
+
+.btn-lightblue{
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+  &:active {
+    color: $white !important;
+  }
+}
 .btn-info{
   //box-shadow:none;
   &:hover {
@@ -44,6 +63,10 @@
   }
 }
 //----------------------------------
+.section-topbar{
+  background-color: $blue-300;
+}
+
 
 p{
   margin-bottom: 0;
@@ -194,14 +217,20 @@ p{
 
       &:focus{
         box-shadow: none;
-        .navbar-toggler-icon{
-
-        }
       }
-      .navbar-toggler-icon{
+      .icon{
         transition: transform 0.8s ease;
+        font-size: 2rem;
+      }
+
+      .open{
+        transition: transform 0.8s ease;
+        display: inline-block;
+        transform: rotate(90deg);
       }
     }
+
+
 
     .nav-item{
       .nav-link{
@@ -257,18 +286,9 @@ p{
     transition: right 0.8s ease;
   }
 
-  .op{
-    transition: transform 0.8s ease;
-    display: inline-block;
-    transform: rotate(90deg);
-  }
 
-  .dropdownMenu.show{
-    left: -32px;
-    .ul:not(:last-child){
-      border-bottom: 1px solid black;
-    }
-  }
+
+
 
 
 
@@ -314,9 +334,7 @@ p{
 
 
 
-  .form-control::placeholder {
-    color: rgba(85, 118, 166, 0.5) !important;
-  }
+
 
   .card{
     transition: all 0.3s ease;
@@ -343,6 +361,49 @@ p{
 
   }
 
+ a.disabled{
+    color: $gray-500 !important;
+ }
+
+ .form-group{
+   width: 80%;
+   border: 2px solid $gray-300;
+   border-radius: 1rem;
+ }
+
+.form-control{
+
+
+  &:focus {
+  }
+}
+
+
+.modal-body{
+
+  .close{
+    font-size: 3rem;
+    position: absolute;
+    right:5%;
+    top: 5%;
+  }
+  border-radius: 1rem;
+  background-color: $white-light;
+}
+//.form-control::placeholder {
+//  color: rgba(85, 118, 166, 0.5) !important;
+//}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 .transaction-block{
   border: 2px solid $gray-300;
@@ -359,8 +420,9 @@ p{
   }
 
   .transaction-scroll{
-    min-height: 200px;
-    max-height: 500px;
+    //min-height: 200px;
+    //max-height: 500px;
+    height: 470px;
   }
 
   .btn-group{
@@ -407,6 +469,40 @@ p{
   padding: 0;
   max-height: 150px;
 }
+
+.dropdown-menu{
+  border: 3px solid $gray-500;
+  border-radius: 1rem;
+  padding-bottom: 0;
+
+  .dropdown-item{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $black;
+  }
+
+  .control-panel{
+
+    a{
+      transition: all 0.5s ease;
+    }
+
+    button{
+      transition: all 0.5s ease;
+      border-top: 3px solid $gray-500;
+      border-radius: 0 0 .6rem .6rem;
+    }
+  }
+
+}
+
+.avatar{
+  img{
+    border: 2px solid $gray-500;
+  }
+}
+
 
 @media (max-width: 992px) {
   .dropdown{

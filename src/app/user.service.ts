@@ -10,7 +10,7 @@ import {authCodeFlowConfig} from "./core/config/authCodeFlowConfig";
 })
 export class UserService {
 
-  private user = new BehaviorSubject<UserModel | undefined>(undefined);
+  private user$ = new BehaviorSubject<UserModel | undefined>(undefined);
   constructor(private oauthService: OAuthService) {
     oauthService.configure(authCodeFlowConfig);
     this.tryLogin();
@@ -19,25 +19,27 @@ export class UserService {
   tryLogin() {
     this.oauthService.loadDiscoveryDocumentAndTryLogin()
       .then(value => {
-        this.user.next(this.oauthService.getIdentityClaims() as UserModel);
+        this.user$.next(this.oauthService.getIdentityClaims() as UserModel);
+        console.log(this.user$);
       })
   }
 
   login(){
     this.oauthService.loadDiscoveryDocumentAndLogin()
       .then(value => {
-        this.user.next(this.oauthService.getIdentityClaims() as UserModel);
+        this.user$.next(this.oauthService.getIdentityClaims() as UserModel);
+        console.log(this.user$);
       })
 
   }
 
   getUserChanges() {
-    return this.user.asObservable();
+    return this.user$.asObservable();
   }
 
   logout() {
     this.oauthService.logOut();
-    this.user.next(undefined);
+    this.user$.next(undefined);
   }
 
   isLoggedIn() {

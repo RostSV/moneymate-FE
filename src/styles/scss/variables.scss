@@ -11,7 +11,9 @@ $gray: #4f4f4f;
 
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-
+$yellow-500: #d5b038 !default;
+$white-light: #ededed !default;
+$blue-300: #4e8be2 !default;
 
 $grid-gutter-width:1rem;
 $enable-shadows: true;
@@ -47,35 +49,41 @@ $btn-box-shadow: 2px 3px 4px 0px rgba(0,0,0,0.75);
 $btn-link-color:red;
 
   // Dropdowns
-$dropdown-bg: $yellow;
+$dropdown-bg: $white;
 $dropdown-item-padding-y: 0.4rem;
 $dropdown-item-padding-x: 1.6rem;
-$dropdown-link-hover-bg: $yellow;
+$dropdown-link-hover-bg: $gray-400;
 $dropdown-link-hover-color: $black;
 $dropdown-link-color: $white;
-$dropdown-link-active-bg: $yellow;
 $dropdown-link-active-color: $black;
+$dropdown-link-active-color: $gray-500;
+$dropdown-link-active-bg: $white;
 
-// Modals
-$modal-content-bg: $yellow;
+  // Modals
+$modal-content-bg: $white;
 $modal-content-border-radius: 1rem;
 $modal-header-padding: 1.2rem 2.4rem;
 $modal-inner-padding: 2.4rem;
 
 // Forms
 $input-padding-y: 1.15rem;
-$input-padding-x: 1.6rem;
+$input-padding-x: 1.0rem;
 $input-border: none;
 $input-bg: $white;
 $input-font-size: 1.6rem;
-$input-font-weight: bold;
-$input-color: $blue;
+$input-font-weight: 500;
+$input-color: $gray;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($gray-500, 0.5);
+$input-focus-border-color: $gray-500;
+$form-select-box-shadow: none;
 
-//Popover
+  //Popover
 $popover-header-color: $black;
-//#f5f7fa
 
-//Cards
+//Links
+$nav-link-disabled-color: $gray-500;
+
+  //Cards
 $card-title-color:                  $gray;
 $card-subtitle-color:               $gray;
 $card-border-width:                 3px;
@@ -96,6 +104,7 @@ $theme-colors: (
   "white": $total-white,
   "coral": $coral,
   "gray": $gray,
+  "lightblue": $blue-300,
 
 
 ) !default;

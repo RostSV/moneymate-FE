@@ -6,7 +6,7 @@
     </a>
     <ng-container *ngIf="(user$ | async)">
     <button  (click)="toggleSidebar()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon" [ngClass]="{ 'op': isOpen }"></span>
+        <i class="zmdi zmdi-menu icon text-white" [ngClass]="{ 'open': isOpen }"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -17,34 +17,45 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="categories" routerLinkActive="active">Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="transaction" routerLinkActive="active">
-            Transaction
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="accounts" routerLinkActive="active">
             Accounts
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" routerLink="transaction" routerLinkActive="active">
+            Transactions
+          </a>
+        </li>
+
 
       </ul>
     </div>
     </ng-container>
 
     <ng-container *ngIf="(user$ | async) as user">
-      <div ngbDropdown class="mt-lg-0 mx-2" [title]="user.firstName">
-        <button class="settings btn btn-secondary b-shadow" type="button" id="dropdownBasic1" ngbDropdownToggle>
+      <div ngbDropdown class="mt-lg-0 mx-2" [title]="user.name"  placement="left">
+        <button class="settings btn btn-white text-gray shadow-sm" type="button" id="dropdownBasic1" ngbDropdownToggle>
           <i class="zmdi zmdi-settings"></i>
         </button>
-        <ul ngbDropdownMenu class="dropdownMenu">
-          <li><button type="button" class="dropdown-item" >Categories</button></li>
-          <li><button type="button" class="dropdown-item" (click)="logout()">Logout</button></li>
-        </ul>
+        <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end">
+            <div class="m-4 mb-2">
+              <div class="avatar d-flex justify-content-center">
+                <img src="./assets/media/static/profile-icon.png" alt="user" class="rounded-circle" width="50" height="50">
+              </div>
+              <div class="user-short-info text-center">
+                <h5 class="name">{{ user.name }}</h5>
+                <span class="name">{{ user.email }}</span>
+              </div>
+            </div>
+            <div class="control-panel">
+              <a ngbDropdownItem type="button" routerLink="categories" class="dropdown-item" >Categories</a>
+              <button ngbDropdownItem type="button" class="dropdown-item text-danger" (click)="logout()">Logout</button>
+            </div>
+        </div>
       </div>
     </ng-container>
+
+
 
     <div class="sidebar" [ngClass]="{ 'open': isOpen }">
       <ul class="navbar-nav" (click)="toggleSidebar()">

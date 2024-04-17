@@ -1,18 +1,17 @@
-<div class="border-yellow" >
-  <div class="modal-header text-white font-700 border-0 justify-content-between">
+<div class="modal-body p-1" >
+  <div class="modal-header text-black font-700 border-0 justify-content-center">
     <h3 class="modal-title">Add new account</h3>
-    <h4 class="close" aria-label="Close" (click)="close()">
-      <i class="zmdi zmdi-close"></i>
-    </h4>
-
-
+      <div class="close" aria-label="Close" (click)="close()">
+        <i class="zmdi zmdi-close"></i>
+      </div>
   </div>
 
   <form [class.was-validated]="form.submitted"
         (submit)="onSubmit(form)" #form=ngForm>
-    <div class="container">
-      <div class="form-group mb-4">
-        <div class="input-group has-validation mb-3">
+    <div class="container d-flex justify-content-center">
+      <div class="form-group mb-4 p-2  shadow-sm bg-white">
+        <div class="has-validation mb-3">
+          <label for="nameInput">Name</label>
           <input type="text"
                  required
                  name="name"
@@ -26,7 +25,8 @@
           </div>
         </div>
 
-        <div class="input-group has-validation mb-3">
+        <div class="has-validation mb-3">
+          <label for="description">Description</label>
           <input type="text"
                  id="description"
                  name="description"
@@ -38,7 +38,8 @@
           </div>
         </div>
 
-        <div class="input-group has-validation mb-3">
+        <div class="has-validation mb-3">
+          <label for="balance">Balance</label>
           <input
             required
             id="balance"
@@ -54,16 +55,16 @@
 
 
 
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">Type</label>
+      <div class="mb-3">
+        <label for="inputGroupSelect01">Type</label>
         <select class="form-select" id="inputGroupSelect01" [(ngModel)]="selectedType" name="type">
           <option *ngFor="let type of accountTypes" value="{{type}}">{{type}}</option>
         </select>
       </div>
 
 
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect02">Currency</label>
+        <div class="mb-3">
+          <label for="inputGroupSelect02">Currency</label>
           <select class="form-select" id="inputGroupSelect02" [(ngModel)]="selectedCurrencyCode" name="currency">
             <option *ngFor="let currency of currencies" value="{{currency.code}}">{{currency.code}}</option>
           </select>
