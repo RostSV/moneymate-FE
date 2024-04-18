@@ -4,9 +4,45 @@
 
 // Variables
 @import 'variables.scss';
-
 // Bootstrap
 @import 'bootstrap/bootstrap.scss';
+
+//Global
+
+p{
+  margin-bottom: 0;
+}
+.section-container{
+  max-width: 1600px;
+}
+//text with yellow outline
+.t-text{
+  font-style: italic;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #F8CA41ff;
+  color: transparent;
+}
+
+.t-shadow{
+  text-shadow:1px 1px 1px rgba(60, 89, 84, 0.77);
+}
+
+.box-shadow{
+  box-shadow: 2px 3px 4px 0 rgba(0,0,0,0.75);
+}
+
+.b-border{
+  border-bottom: 2px solid rgb(236 231 231 / 10%);
+}
+
+.border-1{
+  border-radius: 1rem;
+}
+
+a.disabled{
+  color: $gray-500 !important;
+}
+
 //Buttons
 .btn{
   height: 100%;
@@ -18,7 +54,9 @@
   }
 }
 
-.btn-primary{
+.btn-primary,
+.btn-secondary,
+.btn-lightblue{
   color: $white;
   &:hover {
     color: $white;
@@ -32,57 +70,32 @@
   }
 }
 
-.btn-secondary{
-  color: $white;
-  &:hover {
-    color: $white;
-  }
-  &:active {
-    color: $white !important;
-  }
-}
 
-.btn-lightblue{
-  color: $white;
-  &:hover {
-    color: $white;
-  }
-  &:active {
-    color: $white !important;
-  }
-}
 .btn-info{
-  //box-shadow:none;
-  &:hover {
+  &:hover, &:active {
     color: $gray;
-  }
-
-  &:active{
-    color: $gray;
-
   }
 }
-//----------------------------------
+
+
+//------Topbar for sections
 .section-topbar{
   background-color: $blue-300;
+
+  .top-bar-text{
+    width: 50%
+  }
 }
 
 
-p{
-  margin-bottom: 0;
-}
-.section-container{
-  max-width: 1600px;
-}
+//-------Header
+
 .header{
-
   position: fixed;
   height:60px;
   width:100%;
-
   .container-fluid{
     height: 100%;
-
     .brand-name{
       font-size: 22px;
       font-weight: 500;
@@ -93,13 +106,8 @@ p{
 
 //landing welcome page
 
-  .hero{
-
+.hero{
     padding-top:50px;
-
-    .hero-header{
-
-    }
     .hero-text{
 
       h2{
@@ -112,15 +120,8 @@ p{
         font-size: 1.6rem;
         text-shadow:1px 1px 1px #9a9f3d9e;
       }
-
-
     }
-
-
   }
-
-
-
 
 .how-works{
   border: 2px solid rgb(236 231 231 / 10%);
@@ -138,10 +139,8 @@ p{
   h2{
     font-weight: 700;
   }
-
   article{
     border-radius: 10px;
-
     p{
       font-size: 1.4rem;
       margin: 0;
@@ -162,7 +161,6 @@ p{
       font-weight: 600;
       font-style: italic;
     }
-
     i{
       font-size: 3.5rem;
     }
@@ -170,306 +168,138 @@ p{
 }
 
 
+//--Navbar
+.navbar{
+  height:60px;
+  z-index: 1;
 
-
-
-.t-shadow{
-  text-shadow:1px 1px 1px rgba(60, 89, 84, 0.77);
-}
-
-.box-shadow{
-  box-shadow: 2px 3px 4px 0 rgba(0,0,0,0.75);
-}
-
-
-  .b-border{
-    border-bottom: 2px solid rgb(236 231 231 / 10%);
+  .navbar-brand{
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    text-shadow:1px 2px 2px #3c5954;
   }
 
-  .top-bar-text{
-    width: 50%
+  .navbar-toggler{
+    border: none;
+
+    &:focus{
+      box-shadow: none;
+    }
+    .icon{
+      transition: transform 0.8s ease;
+      font-size: 2rem;
+    }
+
+    .open{
+      transition: transform 0.8s ease;
+      display: inline-block;
+      transform: rotate(90deg);
+    }
   }
 
-  .border-1{
-    border-radius: 1rem;
-  }
 
-  .t-text{
-    font-style: italic;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #F8CA41ff;
-    color: transparent;
-  }
 
-  .navbar{
-    height:60px;
-    z-index: 1;
-
-    .navbar-brand{
+  .nav-item{
+    .nav-link{
       color: white;
-      font-size: 22px;
+      font-size: 1.6rem;
       font-weight: 500;
       text-shadow:1px 2px 2px #3c5954;
     }
 
-    .navbar-toggler{
-      border: none;
+    .active{
+      color: #F8CA41ff;
 
-      &:focus{
-        box-shadow: none;
-      }
-      .icon{
-        transition: transform 0.8s ease;
-        font-size: 2rem;
-      }
-
-      .open{
-        transition: transform 0.8s ease;
-        display: inline-block;
-        transform: rotate(90deg);
-      }
     }
+  }
+}
 
 
+//--Sidebar custom, think of a better way to do this
+.sidebar {
+  margin-top: 60px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: $yellow;
+  transition: right 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    .nav-item{
-      .nav-link{
-        color: white;
-        font-size: 1.6rem;
-        font-weight: 500;
-        text-shadow:1px 2px 2px #3c5954;
-      }
+  .nav-item{
+    .nav-link{
+      color: white;
+      font-size: 4rem;
+      font-weight: 600;
+      text-shadow:none;
 
-      .active{
+      &:active{
         color: #F8CA41ff;
-
       }
-    }
-  }
 
-  .sidebar {
-    margin-top: 60px;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: $yellow;
-    transition: right 0.8s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    .nav-item{
-      .nav-link{
-        color: white;
-        font-size: 4rem;
-        font-weight: 600;
-        text-shadow:none;
-
-        &:active{
-          color: #F8CA41ff;
-        }
-
-        i{
-          font-size: 5rem;
-        }
-
+      i{
+        font-size: 5rem;
       }
 
     }
-  }
 
-  .sidebar.open {
-    right: 0;
-    transition: right 0.8s ease;
-  }
-
-
-
-
-
-
-
-  .popover{
-    width: 160px;
-
-    p{
-      span{
-        font-style: italic;
-        opacity: 50%;
-      }
-    }
-
-    .popover-header {
-      text-align: center;
-    }
-
-    .pop-controls{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      button{
-        color: $white;
-        padding: 0;
-        width: 45%;
-      }
-    }
-  }
-
-  //<_____________________________Categories______________________________________>
-
-  .category-item{
-    position: relative;
-    .zmdi-more{
-      font-size: 1.8rem;
-      position: absolute;
-      right: 1rem;
-      top: 0.5rem;
-    }
-  }
-
-
-
-
-
-
-  .card{
-    transition: all 0.3s ease;
-    i{
-      font-size: 2rem;
-    }
-    &:hover{
-      .card-body{
-        background-color: $gray-300;
-        transition: all 0.3s ease;
-      }
-    }
-  }
-  //Account
-
-  .account-body{
-    //background-color: $green-light;
-
-    .account-header{
-      border-radius: 5rem;
-      //border: 2px solid $green-light;
-      background-color: white;
-    }
-
-  }
-
- a.disabled{
-    color: $gray-500 !important;
- }
-
- .form-group{
-   width: 80%;
-   border: 2px solid $gray-300;
-   border-radius: 1rem;
- }
-
-.form-control{
-
-
-  &:focus {
   }
 }
 
-
-.modal-body{
-
-  .close{
-    font-size: 3rem;
-    position: absolute;
-    right:5%;
-    top: 5%;
-  }
-  border-radius: 1rem;
-  background-color: $white-light;
-}
-//.form-control::placeholder {
-//  color: rgba(85, 118, 166, 0.5) !important;
-//}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.sidebar.open {
+  right: 0;
+  transition: right 0.8s ease;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-
-.transaction-block{
-  border: 2px solid $gray-300;
-  border-radius: 1rem;
-  img {
-    max-width: 15%;
-    height: auto;
-    width: auto\9;
-  }
+//Popover
+.popover{
+  width: 160px;
 
   p{
-    color: $gray-500;
-    font-weight: 500;
+    span{
+      font-style: italic;
+      opacity: 50%;
+    }
   }
 
-  .transaction-scroll{
-    //min-height: 200px;
-    //max-height: 500px;
-    height: 470px;
+  .popover-header {
+    text-align: center;
   }
 
-  .btn-group{
-    border: 2px solid $gray-500;
+  .pop-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     button{
-      border: none;
+      color: $white;
+      padding: 0;
+      width: 45%;
     }
-
-    button:not(:last-child) {
-      margin-right: 3px;
-    }
-
-    .active{
-      transition: all 0.35s ease;
-      color: $gray;
-    }
-  }
-
-
-}
-
-
-//CHARTS
-.advanced-pie-legend{
-
-  margin-left: 25px;
-
-  .total-value{
-    display: none;
-  }
-
-  .total-label{
-    display:none;
-  }
-
-  .item-percent{
-    display:none;
   }
 }
 
-.apple-chart{
-  border: 2px solid $gray-300;
-  border-radius: 1rem;
-  padding: 0;
-  max-height: 150px;
+//--Cards
+
+.card{
+  transition: all 0.3s ease;
+  i{
+    font-size: 2rem;
+  }
+  &:hover{
+    .card-body{
+      background-color: $gray-300;
+      transition: all 0.3s ease;
+    }
+  }
 }
 
+//Dropdown
 .dropdown-menu{
   border: 3px solid $gray-500;
   border-radius: 1rem;
@@ -483,7 +313,6 @@ input[type=number] {
   }
 
   .control-panel{
-
     a{
       transition: all 0.5s ease;
     }
@@ -494,8 +323,120 @@ input[type=number] {
       border-radius: 0 0 .6rem .6rem;
     }
   }
-
 }
+
+.dropdown-toggle{
+  &:hover, &:active{
+    background-color: $gray-300;
+    border-color: $gray-300;
+    transition: all 0.4s ease;
+  }
+}
+
+  //<_____________________________Categories______________________________________>
+
+.category-item{
+  position: relative;
+  .zmdi-more{
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+}
+
+//________________________Account________________________>
+
+.account-body{
+  .account-header{
+      border-radius: 5rem;
+  }
+}
+
+//________________________Forms and  Modals________________________>
+ .form-group{
+   width: 80%;
+   border: 2px solid $gray-300;
+   border-radius: 1rem;
+ }
+
+.modal-body{
+  .close{
+    font-size: 3rem;
+    position: absolute;
+    right:5%;
+    top: 5%;
+  }
+  border-radius: 1rem;
+  background-color: $white-light;
+}
+//disable number input arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+//________________________Transaction block________________________>
+.transaction-block{
+  border: 2px solid $gray-300;
+
+  img {
+    max-width: 15%;
+    height: auto;
+    width: auto;
+  }
+
+  p{
+    color: $gray-500;
+    font-weight: 500;
+  }
+
+  .transaction-scroll{
+    height: 470px;
+  }
+
+  .btn-group{
+    border: 2px solid $gray-500;
+    button{
+      border: none;
+      box-shadow: 0 3px 3px rgba(15, 22, 26, 0.3);
+
+      &:not(:last-child){
+        margin-right: 3px;
+      }
+    }
+
+    .active{
+      transition: all 0.35s ease;
+      box-shadow: none;
+      color: $gray;
+    }
+  }
+}
+
+
+//CHARTS
+.advanced-pie-legend{
+  margin-left: 25px;
+  .total-value,
+  .total-label,
+  .item-percent{
+    display: none;
+  }
+}
+
+.pie-chart{
+  border: 2px solid $gray-300;
+  border-radius: 1rem;
+  padding: 0;
+  max-height: 150px;
+}
+
 
 .avatar{
   img{
@@ -503,7 +444,13 @@ input[type=number] {
   }
 }
 
+.no-content{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
+//--------------------Media Queries---------------------->
 @media (max-width: 992px) {
   .dropdown{
     display: none;
@@ -571,7 +518,6 @@ input[type=number] {
           font-size: 5rem;
           color: $gray-500;
         }
-
         .account-info{
           border-radius: 1rem;
           background-color: $total-white;
@@ -591,12 +537,6 @@ input[type=number] {
   }
 }
 
-
-.no-content{
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 
 
