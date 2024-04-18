@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {CategoryModel} from "../models/category.model";
-import {map} from "rxjs";
-import {CategoryItemComponent} from "../../features/category/category-item/category-item.component";
+import { HttpClient } from '@angular/common/http';
+import { CategoryModel } from '../models/category.model';
+import { map } from 'rxjs';
+import { CategoryItemComponent } from '../../features/category/category-item/category-item.component';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryApiService {
-  // apiUrl = environment.beUrl + '/categories';
-  apiUrl = 'http://localhost:9090/api/v1/categories';
-  constructor(private http: HttpClient) {
-  }
+  apiUrl = environment.server + '/api/v1/categories';
+  constructor(private http: HttpClient) {}
 
   getCategories() {
     return this.http.get<CategoryModel[]>(this.apiUrl);
@@ -23,12 +22,16 @@ export class CategoryApiService {
 
   checkIfCategoryExists(name: string) {
     return this.getCategories().pipe(
-      map( categories => categories
-        .filter(category => category.name === name).length > 0)
-    )
+      map(
+        (categories) =>
+          categories.filter((category) => category.name === name).length > 0,
+      ),
+    );
   }
 
   deleteCategory($event: CategoryModel) {
-    return this.http.delete<CategoryItemComponent>(this.apiUrl + '/' + $event.id);
+    return this.http.delete<CategoryItemComponent>(
+      this.apiUrl + '/' + $event.id,
+    );
   }
 }

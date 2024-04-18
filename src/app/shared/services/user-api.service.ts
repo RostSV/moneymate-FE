@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../environments/environment";
-import {UserModel} from "../models/user.model";
+import { HttpClient } from '@angular/common/http';
+import { UserModel } from '../models/user.model';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserApiService {
-
-  apiUrl = environment.beUrl + "/api/v1/users"
-  constructor(private http: HttpClient) { }
+  apiUrl = environment.server + '/api/v1/users';
+  constructor(private http: HttpClient) {}
 
   addUser(user: UserModel) {
     return this.http.post(this.apiUrl, user);

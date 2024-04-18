@@ -1,15 +1,13 @@
-import {Component, Input} from '@angular/core';
-import {NgxChartsModule, ScaleType} from "@swimlane/ngx-charts";
+import { Component, Input } from '@angular/core';
+import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-pie-chart',
   standalone: true,
-  imports: [
-    NgxChartsModule
-  ],
-  templateUrl: './pie-chart.component.html'
+  imports: [NgxChartsModule],
+  templateUrl: './pie-chart.component.html',
 })
-export class PieChartComponent{
+export class PieChartComponent {
   //data
   @Input()
   single: any;
@@ -20,11 +18,6 @@ export class PieChartComponent{
     name: 'MyScheme',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#00A084', '#F26C6B']
+    domain: ['#00A084', '#F26C6B'],
   };
-
-  constructor() {
-  }
-
-
 }

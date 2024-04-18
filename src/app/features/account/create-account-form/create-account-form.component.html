@@ -1,25 +1,30 @@
-<div class="modal-body p-1" >
+<div class="modal-body p-1">
   <div class="modal-header text-black font-700 border-0 justify-content-center">
     <h3 class="modal-title">Add new account</h3>
-      <div class="close" aria-label="Close" (click)="close()">
-        <i class="zmdi zmdi-close"></i>
-      </div>
+    <div class="close" aria-label="Close" (click)="close()">
+      <i class="zmdi zmdi-close"></i>
+    </div>
   </div>
 
-  <form [class.was-validated]="form.submitted"
-        (submit)="onSubmit(form)" #form=ngForm>
+  <form
+    [class.was-validated]="form.submitted"
+    (submit)="onSubmit(form)"
+    #form="ngForm">
+
     <div class="container d-flex justify-content-center">
-      <div class="form-group mb-4 p-2  shadow-sm bg-white">
+      <div class="form-group mb-4 p-2 shadow-sm bg-white">
         <div class="has-validation mb-3">
           <label for="nameInput">Name</label>
-          <input type="text"
-                 required
-                 name="name"
-                 id="nameInput"
-                 placeholder="Name"
-                 class="form-control"
-                 pattern="^[a-zA-Z ]*$"
-                 [(ngModel)]="account.name">
+          <input
+            type="text"
+            required
+            name="name"
+            id="nameInput"
+            placeholder="Name"
+            class="form-control"
+            pattern="^[a-zA-Z ]*$"
+            [(ngModel)]="account.name"
+          />
           <div class="invalid-feedback">
             Please provide a name. e.g. MyAccount
           </div>
@@ -27,12 +32,14 @@
 
         <div class="has-validation mb-3">
           <label for="description">Description</label>
-          <input type="text"
-                 id="description"
-                 name="description"
-                 class="form-control"
-                 placeholder="Description"
-                 [(ngModel)]="account.description">
+          <input
+            type="text"
+            id="description"
+            name="description"
+            class="form-control"
+            placeholder="Description"
+            [(ngModel)]="account.description"
+          />
           <div class="invalid-feedback">
             Please provide a valid description.
           </div>
@@ -47,37 +54,48 @@
             class="form-control"
             placeholder="Balance"
             pattern="^[0-9]*([.][0-9]+)?$"
-            [(ngModel)]="account.balance">
+            [(ngModel)]="account.balance"
+          />
           <div class="invalid-feedback">
             Please provide a valid balance. e.g. 100 or 10.5
           </div>
         </div>
 
-
-
-      <div class="mb-3">
-        <label for="inputGroupSelect01">Type</label>
-        <select class="form-select" id="inputGroupSelect01" [(ngModel)]="selectedType" name="type">
-          <option *ngFor="let type of accountTypes" value="{{type}}">{{type}}</option>
-        </select>
-      </div>
-
-
         <div class="mb-3">
-          <label for="inputGroupSelect02">Currency</label>
-          <select class="form-select" id="inputGroupSelect02" [(ngModel)]="selectedCurrencyCode" name="currency">
-            <option *ngFor="let currency of currencies" value="{{currency.code}}">{{currency.code}}</option>
+          <label for="inputGroupSelect01">Type</label>
+          <select
+            class="form-select"
+            id="inputGroupSelect01"
+            [(ngModel)]="selectedType"
+            name="type"
+          >
+            <option *ngFor="let type of accountTypes" value="{{ type }}">
+              {{ type }}
+            </option>
           </select>
         </div>
 
+        <div class="mb-3">
+          <label for="inputGroupSelect02">Currency</label>
+          <select
+            class="form-select"
+            id="inputGroupSelect02"
+            [(ngModel)]="selectedCurrencyCode"
+            name="currency"
+          >
+            <option
+              *ngFor="let currency of currencies"
+              value="{{ currency.code }}"
+            >
+              {{ currency.code }}
+            </option>
+          </select>
+        </div>
       </div>
-
     </div>
 
-
-
     <div class="modal-footer justify-content-center border-top-0">
-      <button type="submit" class="btn btn-primary text-white" >Submit</button>
+      <button type="submit" class="btn btn-primary text-white">Submit</button>
     </div>
   </form>
 </div>

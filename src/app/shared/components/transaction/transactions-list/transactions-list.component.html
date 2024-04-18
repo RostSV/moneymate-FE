@@ -1,36 +1,55 @@
 <div class="transaction-block border-1">
   <div ngbScrollSpy class="transaction-scroll text-center col-12">
-
-    <div *ngIf="transactions?.length === 0;" class="no-content text-gray justify-content-center d-flex">
-      <h5 class="w-75">No available transactions yet, try add some or change timeframe.</h5>
+    <div *ngIf="transactions?.length === 0"
+      class="no-content text-gray justify-content-center d-flex"
+    >
+      <h5 class="w-75">
+        No available transactions yet, try add some or change timeframe.
+      </h5>
     </div>
 
     <div class="p-2">
-      <div *ngFor="let transaction of transactions" class="bg-twhite row mb-4 p-3 border-1 shadow-sm align-items-center">
-        <app-transaction-item class="row" [transaction]="transaction"></app-transaction-item>
+      <div
+        *ngFor="let transaction of transactions"
+        class="bg-twhite row mb-4 p-3 border-1 shadow-sm align-items-center"
+      >
+        <app-transaction-item
+          class="row"
+          [transaction]="transaction"
+        ></app-transaction-item>
       </div>
     </div>
-
   </div>
 
   <div class="btn-container d-flex justify-content-center shadow-sm p-2">
     <div class="btn-group" role="group" aria-label="Button group with toggle">
-      <button type="button" id="weekBtn" class="btn btn-sm btn-info px-3"
-              [class.active]="days === environment.week"
-              (click)="changeInterval(environment.week)">
+      <button
+        type="button"
+        id="weekBtn"
+        class="btn btn-sm btn-info px-3"
+        [class.active]="days === environment.week"
+        (click)="changeInterval(environment.week)"
+      >
         7D
       </button>
-      <button type="button" id="monthBtn" class="btn btn-sm btn-info px-3"
-              [class.active]="days === environment.month"
-              (click)="changeInterval(environment.month)">
+      <button
+        type="button"
+        id="monthBtn"
+        class="btn btn-sm btn-info px-3"
+        [class.active]="days === environment.month"
+        (click)="changeInterval(environment.month)"
+      >
         30D
       </button>
-      <button type="button" id="quarterBtn" class="btn btn-sm btn-info px-3"
-              [class.active]="days === environment.quarter"
-              (click)="changeInterval(environment.quarter)">
+      <button
+        type="button"
+        id="quarterBtn"
+        class="btn btn-sm btn-info px-3"
+        [class.active]="days === environment.quarter"
+        (click)="changeInterval(environment.quarter)"
+      >
         90D
       </button>
     </div>
   </div>
-
 </div>

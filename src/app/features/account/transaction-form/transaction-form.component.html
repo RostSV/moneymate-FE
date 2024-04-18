@@ -8,70 +8,99 @@
     </div>
   </div>
 
-  <form [class.was-validated]="form.submitted"
-        (submit)="onSubmit(form)" #form=ngForm name="myForm">
+  <form
+    [class.was-validated]="form.submitted"
+    (submit)="onSubmit(form)"
+    #form="ngForm"
+    name="myForm"
+  >
     <div class="container d-flex justify-content-center">
-      <div class="form-group mb-4 p-2  shadow-sm bg-white">
+      <div class="form-group mb-4 p-2 shadow-sm bg-white">
         <div class="has-validation mb-3">
           <label>Amount</label>
-          <input type="number"
-                 required
-                 min="0.01"
-                 name="amount"
-                 id="amount"
-                 placeholder="Amount"
-                 class="form-control"
-                 pattern="^[0-9]*([.][0-9]+)?$"
-                 [(ngModel)]="transaction.amount">
-          <div class="invalid-feedback">
-            Amount should be above zero.
-          </div>
+          <input
+            required
+            type="number"
+            min="0.01"
+            step="0.01"
+            name="amount"
+            id="amount"
+            placeholder="Amount"
+            class="form-control"
+            pattern="^[0-9]*([.][0-9]+)?$"
+            [(ngModel)]="transaction.amount"
+          />
+          <div class="invalid-feedback">Amount should be above zero.</div>
         </div>
 
         <div class="has-validation mb-3">
           <label>Description</label>
-          <input type="text"
-                 id="description"
-                 name="description"
-                 class="form-control"
-                 placeholder="Description"
-                 [(ngModel)]="transaction.description">
+          <input
+            type="text"
+            id="description"
+            name="description"
+            class="form-control"
+            placeholder="Description"
+            [(ngModel)]="transaction.description"
+          />
         </div>
 
         <div class="mb-3">
           <label for="inputGroupSelect01">Category</label>
-          <select class="form-select" id="inputGroupSelect01"
-                  [(ngModel)]="selectedCategoryName" name="category" required>
-            <option  value="" disabled selected hidden>Select category</option>
-            <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+          <select
+            class="form-select"
+            id="inputGroupSelect01"
+            [(ngModel)]="selectedCategoryName"
+            name="category"
+            required
+          >
+            <option value="" disabled selected hidden>Select category</option>
+            <option
+              *ngFor="let category of categories"
+              value="{{ category.name }}"
+            >
+              {{ category.name }}
+            </option>
           </select>
         </div>
 
-
-
         <div class="mb-3">
-          <label  for="inputGroupSelect02">Currency</label>
-          <select class="form-select" id="inputGroupSelect02" [(ngModel)]="selectedCurrencyCode" name="currency" required>
-            <option *ngFor="let currency of currencies" value="{{currency.code}}">{{currency.code}}</option>
+          <label for="inputGroupSelect02">Currency</label>
+          <select
+            class="form-select"
+            id="inputGroupSelect02"
+            [(ngModel)]="selectedCurrencyCode"
+            name="currency"
+            required
+          >
+            <option
+              *ngFor="let currency of currencies"
+              value="{{ currency.code }}"
+            >
+              {{ currency.code }}
+            </option>
           </select>
         </div>
 
         <div class="mb-3">
           <label class="" for="inputGroupSelect03">Type</label>
-          <select class="form-select" id="inputGroupSelect03" [(ngModel)]="selectedType" name="type" required>
-            <option *ngFor="let type of transactionTypes" value="{{type}}">{{type}}</option>
+          <select
+            class="form-select"
+            id="inputGroupSelect03"
+            [(ngModel)]="selectedType"
+            name="type"
+            required
+          >
+            <option *ngFor="let type of transactionTypes" value="{{ type }}">
+              {{ type }}
+            </option>
           </select>
         </div>
-
-
       </div>
-
     </div>
 
-
-
     <div class="modal-footer justify-content-center border-top-0">
-      <button type="submit" class="btn btn-primary text-white" >Submit</button>
+      <button type="submit" class="btn btn-primary text-white">Submit</button>
     </div>
   </form>
 </div>

@@ -3,4 +3,4 @@
   <h4 class="px-2 normal" [class.negative]="transaction?.type == TransactionType.EXPENSE">{{transaction?.amount | currency : '':''}}</h4>
 </div>
 <div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction?.category?.name}}</p></div>
-<div class="col-6 col-md-4 text-center"><h5>{{transaction?.date | timeDate}}</h5></div>
+<div class="col-6 col-md-4 text-center"><h5>{{transaction?.createdOn | timeDate}}</h5></div>

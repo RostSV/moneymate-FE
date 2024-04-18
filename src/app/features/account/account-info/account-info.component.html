@@ -1,14 +1,18 @@
 <app-section-container>
   <div class="account-body container">
-    <div  class="account-header bg-white shadow-sm row p-4 mb-4">
-      <h2 class="account-header-title col-12 text-center text-primary">{{account?.balance | currency}}</h2>
-      <div class="account-header-subtitle col-12 text-center">Manage your account settings</div>
+    <div class="account-header bg-white shadow-lg row p-4 mb-4">
+      <h2 class="account-header-title col-12 text-center text-primary">
+        {{ account?.balance | currency }}
+      </h2>
+      <div class="account-header-subtitle col-12 text-center">
+        Seize financial joy today!
+      </div>
     </div>
 
     <div class="account-body-content row justify-content-center">
-
-      <div class="account-toolbar row col-12 row-cols-2 row-cols-md-1 col-md-4 mb-3">
-
+      <div
+        class="account-toolbar row col-12 row-cols-2 row-cols-md-1 col-md-4 mb-3"
+      >
         <div class="col-12 col-md-11 content p-md-3">
           <div class="info d-none d-md-block mb-md-3">
             <div class="row rows-cols-1">
@@ -16,31 +20,42 @@
                 <i class="zmdi zmdi-account-circle"></i>
                 <div class="account-info my-3 p-2 text-start">
                   <h6 class="text-center mb-2">Account info</h6>
-                  <p><span>Name: </span>{{account?.name}}</p>
-                  <p *ngIf="account?.description" class="lh-sm"><span>Desc: </span>{{account?.description}}</p>
-                  <p><span>Type: </span>{{account?.type}}</p>
-                  <p *ngIf="account?.currency?.name"><span>Currency: </span>{{account?.currency?.name}}</p>
+                  <p><span>Name: </span>{{ account?.name }}</p>
+                  <p *ngIf="account?.description" class="lh-sm">
+                    <span>Desc: </span>{{ account?.description }}
+                  </p>
+                  <p><span>Type: </span>{{ account?.type }}</p>
+                  <p *ngIf="account?.currency?.name">
+                    <span>Currency: </span>{{ account?.currency?.name }}
+                  </p>
                 </div>
-
               </div>
             </div>
           </div>
 
           <div class="row col-12 row-cols-2 align-items-md-around g-md-0">
             <div class="col-6 col-md-12 align-items-md-end mb-md-3">
-              <app-adding-button label="Transaction" (newItemEvent)="addTransaction()" ></app-adding-button>
+              <app-adding-button
+                label="Transaction"
+                (newItemEvent)="addTransaction()"
+              ></app-adding-button>
             </div>
             <div class="col-6 col-md-12">
-              <app-settings-button (settingsEvent)="(openSettings())"></app-settings-button>
+              <app-settings-button
+                (settingsEvent)="openSettings()"
+              ></app-settings-button>
             </div>
           </div>
         </div>
       </div>
 
-      <app-transactions-list (changeIntervalEvent)="changeInterval($event)" class="col-12 col-md-8 mb-3" [transactions]="transactions$ | async"></app-transactions-list>
+      <app-transactions-list
+        (changeIntervalEvent)="changeInterval($event)"
+        class="col-12 col-md-8 mb-3"
+        [transactions]="transactions$ | async"
+      ></app-transactions-list>
 
-      <app-pie-chart class="row" [single]="pieChartData" ></app-pie-chart>
+      <app-pie-chart class="row" [single]="pieChartData"></app-pie-chart>
     </div>
   </div>
 </app-section-container>
-

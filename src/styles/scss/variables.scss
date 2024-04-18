@@ -17,6 +17,7 @@ $blue-300: #4e8be2 !default;
 
 $grid-gutter-width:1rem;
 $enable-shadows: true;
+$box-shadow-lg: 0 0.8rem 3rem rgba(15, 22, 26, 0.1);
 
   // Variables
 $body-bg: $white;
@@ -75,7 +76,7 @@ $input-font-weight: 500;
 $input-color: $gray;
 $input-focus-box-shadow: 0 0 0 0.2rem rgba($gray-500, 0.5);
 $input-focus-border-color: $gray-500;
-$form-select-box-shadow: none;
+$form-select-box-shadow: 0;
 
   //Popover
 $popover-header-color: $black;

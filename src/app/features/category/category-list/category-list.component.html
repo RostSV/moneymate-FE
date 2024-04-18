@@ -1,17 +1,22 @@
 <app-section-container>
   <div class="category-block">
-
-    <app-section-topbar [title]="title" [subtitle]="subtitle" [titleImgUrl]="titleImgUrl"
-                        [addButtonText]="buttonTitle" (add)="onNewCategoryClick()"></app-section-topbar>
+    <app-section-topbar
+      [title]="title"
+      [subtitle]="subtitle"
+      [titleImgUrl]="titleImgUrl"
+      [addButtonText]="buttonTitle"
+      (add)="onNewCategoryClick()"
+    ></app-section-topbar>
 
     <div class="container p-0 text-center">
       <div class="row row-cols-2 row-cols-lg-3 g-2">
-        <app-category-item *ngFor="let category of (categories$ | async)" [category]="category"
-        (deleteCategory)="onDelete($event)">
+        <app-category-item
+          *ngFor="let category of categories$ | async"
+          [category]="category"
+          (deleteCategory)="onDelete($event)"
+        >
         </app-category-item>
       </div>
     </div>
-
   </div>
 </app-section-container>
-

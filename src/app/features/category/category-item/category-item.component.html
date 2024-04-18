@@ -1,6 +1,5 @@
-<!--popover-->
 <ng-template #popContent class="popover">
-  <p class="my-2 " *ngIf="category.description && isMobile">
+  <p class="my-2 " *ngIf="category.description">
     <span>Description:</span>
     {{category.description}}
   </p>
@@ -11,14 +10,14 @@
 </ng-template>
 
 <button class="category-item col col-md-4 btn btn-lightblue box-shadow rounded-3 mb-3 p-2 w-100"
-     [ngbPopover]="(isTablet || isMobile) ? popContent : null"
+     [ngbPopover]="popContent"
      [popoverTitle]="isMobile ? 'Info' : null">
 
     <h4 class="category-title" >{{category.name}}</h4>
     <i class="zmdi zmdi-more"></i>
 
-    <div *ngIf="isTablet">
-      <p class="fst-italic fw-light">{{category.description}}</p>
-    </div>
+<!--    <div *ngIf="!isMobile">-->
+<!--      <p class="fst-italic fw-light">{{category.description}}</p>-->
+<!--    </div>-->
 </button>
 
