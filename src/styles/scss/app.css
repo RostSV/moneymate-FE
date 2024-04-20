@@ -13630,7 +13630,7 @@ a.disabled {
 .card i {
   font-size: 2rem;
 }
-.card:hover .card-body {
+.card:hover {
   background-color: #dee2e6;
   transition: all 0.3s ease;
 }

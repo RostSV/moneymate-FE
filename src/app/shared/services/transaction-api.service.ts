@@ -10,13 +10,6 @@ export class TransactionApiService {
   apiUrl = environment.server + '/api/v1/accounts';
   constructor(private http: HttpClient) {}
 
-  getTransactionsByAccountId(accountId: number, days: number) {
-    return this.http.get<TransactionModel[]>(
-      this.apiUrl + '/' + accountId + '/transactions',
-      { params: { days: days.toString() } },
-    );
-  }
-
   createTransaction(
     transaction: TransactionModel,
     accountId: number | undefined,
@@ -25,5 +18,18 @@ export class TransactionApiService {
       this.apiUrl + '/' + accountId + '/transactions',
       transaction,
     );
+  }
+
+  getTransactionsByAccountId(accountId: number, days: number) {
+    return this.http.get<TransactionModel[]>(
+      this.apiUrl + '/' + accountId + '/transactions',
+      { params: { days: days.toString() } },
+    );
+  }
+
+  getAllTransactions(days: number) {
+    return this.http.get<TransactionModel[]>(this.apiUrl + '/transactions', {
+      params: { days: days.toString() },
+    });
   }
 }

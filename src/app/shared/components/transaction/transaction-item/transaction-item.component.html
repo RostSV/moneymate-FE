@@ -1,6 +1,8 @@
-<div class="col-6 col-md-4 d-flex align-items-center" [class.text-danger]="transaction?.type == TransactionType.EXPENSE">
-  <img src='./assets/media/{{transaction?.currency?.code}}.png' alt="icon">
-  <h4 class="px-2 normal" [class.negative]="transaction?.type == TransactionType.EXPENSE">{{transaction?.amount | currency : '':''}}</h4>
+<div class="align-items-center bg-twhite row mb-4 p-3 border-1 shadow-lg">
+  <div class="col-6 col-md-4 d-flex align-items-center" [class.text-danger]="transaction?.type == TransactionType.EXPENSE">
+    <img src='./assets/media/{{transaction?.currency?.code}}.png' alt="icon">
+    <h4 class="px-2 normal" [class.negative]="transaction?.type == TransactionType.EXPENSE">{{transaction?.amount | currency : '':''}}</h4>
+  </div>
+  <div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction?.category?.name}}</p></div>
+  <div class="col-6 col-md-4 text-center"><h5>{{transaction?.createdOn | timeDate}}</h5></div>
 </div>
-<div class="d-none d-md-block col-md-4 text-gray"><p>{{transaction?.category?.name}}</p></div>
-<div class="col-6 col-md-4 text-center"><h5>{{transaction?.createdOn | timeDate}}</h5></div>

@@ -286,10 +286,8 @@ a.disabled {
     font-size: 2rem;
   }
   &:hover {
-    .card-body {
       background-color: $gray-300;
       transition: all 0.3s ease;
-    }
   }
 }
 

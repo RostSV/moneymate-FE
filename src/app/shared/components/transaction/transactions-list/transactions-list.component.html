@@ -8,15 +8,9 @@
       </h5>
     </div>
 
-    <div class="p-2">
-      <div
-        *ngFor="let transaction of transactions"
-        class="bg-twhite row mb-4 p-3 border-1 shadow-sm align-items-center"
-      >
-        <app-transaction-item
-          class="row"
-          [transaction]="transaction"
-        ></app-transaction-item>
+    <div class="p-4">
+      <div *ngFor="let transaction of transactions">
+        <app-transaction-item [transaction]="transaction"></app-transaction-item>
       </div>
     </div>
   </div>
