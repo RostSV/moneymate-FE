@@ -504,12 +504,15 @@ input[type="number"] {
       border: 2px solid $gray-300;
 
       .info {
+
+
         i {
           font-size: 5rem;
           color: $gray-500;
         }
         .account-info {
           border-radius: 1rem;
+          border: 1px solid $gray-300;
           background-color: $total-white;
 
           span {

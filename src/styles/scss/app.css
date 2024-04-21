@@ -13809,6 +13809,7 @@ input[type=number] {
   }
   .account-toolbar .content .info .account-info {
     border-radius: 1rem;
+    border: 1px solid #dee2e6;
     background-color: #ffffff;
   }
   .account-toolbar .content .info .account-info span {

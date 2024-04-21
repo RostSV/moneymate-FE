@@ -14,11 +14,9 @@
         class="account-toolbar row col-12 row-cols-2 row-cols-md-1 col-md-4 mb-3"
       >
         <div class="col-12 col-md-11 content p-md-3">
-          <div class="info d-none d-md-block mb-md-3">
-            <div class="row rows-cols-1">
-              <div class="text-center">
+          <div class="info d-none d-md-block mb-md-3 row rows-cols-1 text-center">
                 <i class="zmdi zmdi-account-circle"></i>
-                <div class="account-info my-3 p-2 text-start">
+                <div class="account-info my-3 p-3 text-start">
                   <h6 class="text-center mb-2">Account info</h6>
                   <p><span>Name: </span>{{ account?.name }}</p>
                   <p *ngIf="account?.description" class="lh-sm">
@@ -28,8 +26,6 @@
                   <p *ngIf="account?.currency?.name">
                     <span>Currency: </span>{{ account?.currency?.name }}
                   </p>
-                </div>
-              </div>
             </div>
           </div>
 
