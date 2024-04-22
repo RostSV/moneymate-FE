@@ -1,0 +1,14 @@
+<div *ngIf="single" class="col-12 horizontal-chart">
+  <ngx-charts-bar-horizontal
+    [scheme]="colorScheme"
+    [results]="single"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [trimYAxisTicks]="trimYAxisTicks"
+    [maxYAxisTickLength]="maxYAxisTickLength"
+    [roundDomains]="roundDomains"
+  >
+  </ngx-charts-bar-horizontal>
+
+</div>

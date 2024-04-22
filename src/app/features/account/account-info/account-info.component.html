@@ -52,6 +52,16 @@
       ></app-transactions-list>
 
       <app-pie-chart class="row" [single]="pieChartData"></app-pie-chart>
+
+      <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 row-cols-lg-2 p-8 mt-3 account-category-charts">
+        <div class="col-12 col-lg-6 p-0">
+          <app-horizontal-chart [single]="categoryPieChartData"></app-horizontal-chart>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+          <app-simple-pie-chart [dataPC]="categoryPieChartData"></app-simple-pie-chart>
+        </div>
+      </div>
+
     </div>
   </div>
 </app-section-container>

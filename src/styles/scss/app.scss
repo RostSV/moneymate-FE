@@ -344,6 +344,11 @@ a.disabled {
   .account-header {
     border-radius: 5rem;
   }
+
+  .account-category-charts{
+    border-radius: 1rem;
+    border: 2px solid $gray-300;
+  }
 }
 
 //________________________Forms and  Modals________________________>
@@ -441,6 +446,32 @@ input[type="number"] {
   transform: translateY(-50%);
 }
 
+.chart-legend{
+
+  .legend-title{
+    display: none;
+  }
+  .legend-wrap{
+    .legend-labels{
+      background-color: $white;
+      text-align: center;
+    }
+  }
+}
+
+.simple-pie-chart{
+  max-height: 300px;
+}
+.horizontal-chart{
+  max-height: 300px;
+  .ngx-charts-outer{
+    max-height: 300px;
+  }
+
+}
+
+
+
 //--------------------Media Queries---------------------->
 @media (max-width: 992px) {
   .dropdown {
@@ -487,6 +518,11 @@ input[type="number"] {
         font-size: 1.6rem;
       }
     }
+  }
+}
+@media (max-width: 600px) {
+  .horizontal-chart{
+    display: none;
   }
 }
 

@@ -8,8 +8,8 @@ import { TransactionModel } from '../../../shared/models/transaction.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TransactionFormComponent } from '../transaction-form/transaction-form.component';
 import { environment } from '../../../../environments/environment.development';
-import { ExpenseIncomeTotalService } from '../../../shared/services/utilities/expense-income-total.service';
 import { TotalExpenseIncomeModel } from '../../../shared/models/chartModels/total-expense-income.model';
+import {chartsService} from "../../../shared/services/utilities/charts.service";
 
 @Component({
   selector: 'app-account-info',
@@ -24,13 +24,14 @@ export class AccountInfoComponent implements OnInit {
   account: AccountModel | undefined;
   days: number;
   pieChartData: TotalExpenseIncomeModel[] = [];
+  categoryPieChartData: any;
 
   constructor(
     private router: ActivatedRoute,
     private accountService: AccountApiService,
     private transactionService: TransactionApiService,
     private modalService: NgbModal,
-    private transactionCalculator: ExpenseIncomeTotalService,
+    private transactionCalculator: chartsService,
   ) {
     this.account$ = new Observable<AccountModel>();
     this.transactions$ = new Observable<TransactionModel[]>();
@@ -61,6 +62,9 @@ export class AccountInfoComponent implements OnInit {
         this.pieChartData = [
           ...this.transactionCalculator.calculateTotal(transactions),
         ];
+        this.categoryPieChartData = this.transactionCalculator.calculateCategory(
+          transactions,
+        );
       }
     });
   }

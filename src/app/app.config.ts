@@ -10,6 +10,7 @@ import { authInterceptor } from './core/interceptors/auth.interceptor';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { registerLocaleData } from '@angular/common';
 import localeSk from '@angular/common/locales/sk';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 registerLocaleData(localeSk, 'sk');
 export const appConfig: ApplicationConfig = {
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([authInterceptor])),
     { provide: LOCALE_ID, useValue: 'sk' },
     provideRouter(routes),
+    provideAnimations(),
     importProvidersFrom(
       OAuthModule.forRoot({
         resourceServer: {

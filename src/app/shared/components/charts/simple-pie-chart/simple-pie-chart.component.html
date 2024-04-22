@@ -1,0 +1,16 @@
+<div *ngIf="dataPC" class="col-12 simple-pie-chart">
+  <ngx-charts-pie-chart
+    [results]="dataPC"
+    [animations]="animationPC"
+    [scheme]="colorSchemePC"
+    [labels]="labelsPC"
+    [maxLabelLength]="maxLabelLength"
+    [doughnut]="doughnut"
+    [legend]="showLegend"
+    [legendTitle]="legendTitle"
+    [tooltipDisabled]="tooltipDisabled"
+    [legendPosition]="legendPosition"
+
+  >
+  </ngx-charts-pie-chart>
+</div>

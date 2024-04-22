@@ -16,6 +16,8 @@ import {
   TransactionsListComponent
 } from "../../shared/components/transaction/transactions-list/transactions-list.component";
 import {PieChartComponent} from "../../shared/components/charts/pie-chart/pie-chart.component";
+import {SimplePieChartComponent} from "../../shared/components/charts/simple-pie-chart/simple-pie-chart.component";
+import {HorizontalChartComponent} from "../../shared/components/charts/horizontal-chart/horizontal-chart.component";
 
 
 
@@ -26,20 +28,22 @@ import {PieChartComponent} from "../../shared/components/charts/pie-chart/pie-ch
     AccountInfoComponent,
     CreateAccountFormComponent,
   ],
-    imports: [
-        CommonModule,
-        SectionContainerComponent,
-        SectionTopbarComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        NgbModule,
-        PieChartModule,
-        NgOptimizedImage,
-        TimeDatePipe,
-        AddingButtonComponent,
-        SettingsButtonComponent,
-        TransactionsListComponent,
-        PieChartComponent
-    ]
+  imports: [
+    CommonModule,
+    SectionContainerComponent,
+    SectionTopbarComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    PieChartModule,
+    NgOptimizedImage,
+    TimeDatePipe,
+    AddingButtonComponent,
+    SettingsButtonComponent,
+    TransactionsListComponent,
+    PieChartComponent,
+    SimplePieChartComponent,
+    HorizontalChartComponent
+  ]
 })
 export class AccountModule { }
