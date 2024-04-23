@@ -11,6 +11,8 @@ export class PieChartComponent {
   //data
   @Input()
   single: any;
+  @Input()
+  days: number = 0;
   //options
   gradient: boolean = false;
 
@@ -20,4 +22,5 @@ export class PieChartComponent {
     group: ScaleType.Ordinal,
     domain: ['#00A084', '#F26C6B'],
   };
+
 }

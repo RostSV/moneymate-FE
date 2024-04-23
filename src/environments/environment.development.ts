@@ -12,4 +12,6 @@ export const environment = {
   week: 7,
   month: 30,
   quarter: 90,
+  maxCategoriesInPieChar: 5,
+
 };

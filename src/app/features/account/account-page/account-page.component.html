@@ -1,0 +1,10 @@
+<app-section-container>
+
+  <div class="container">
+    <app-section-topbar  [title]="title" [subtitle]="subtitle"
+                         [titleImgUrl]="titleImgUrl" [addButtonText]="buttonTitle" (add)="addAccount()">
+    </app-section-topbar>
+
+    <app-account-list [accounts]="accounts$ | async"></app-account-list>
+  </div>
+</app-section-container>

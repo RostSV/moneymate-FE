@@ -1,13 +1,4 @@
-<app-section-container>
-
-  <div class="container">
-    <app-section-topbar  [title]="title" [subtitle]="subtitle"
-                         [titleImgUrl]="titleImgUrl" [addButtonText]="buttonTitle" (add)="addAccount()">
-    </app-section-topbar>
-
-    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
-      <app-account-item *ngFor="let account of (accounts$ | async)" [account]="account" class="clickable" (click)="onAccountClick(account)">
-      </app-account-item>
-    </div>
-  </div>
-</app-section-container>
+<div class="row row-cols-1 g-4">
+  <app-account-item *ngFor="let account of accounts" [account]="account" class="clickable" (click)="onAccountClick(account)">
+  </app-account-item>
+</div>

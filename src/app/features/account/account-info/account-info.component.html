@@ -1,13 +1,6 @@
 <app-section-container>
   <div class="account-body container">
-    <div class="account-header bg-white shadow-lg row p-4 mb-4">
-      <h2 class="account-header-title col-12 text-center text-primary">
-        {{ account?.balance | currency }}
-      </h2>
-      <div class="account-header-subtitle col-12 text-center">
-        Seize financial joy today!
-      </div>
-    </div>
+    <app-balance [balance]="account?.balance"></app-balance>
 
     <div class="account-body-content row justify-content-center">
       <div
@@ -53,7 +46,7 @@
 
       <app-pie-chart class="row" [single]="pieChartData"></app-pie-chart>
 
-      <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 row-cols-lg-2 p-8 mt-3 account-category-charts">
+      <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 row-cols-lg-2  mt-3 account-category-charts">
         <div class="col-12 col-lg-6 p-0">
           <app-horizontal-chart [single]="categoryPieChartData"></app-horizontal-chart>
         </div>

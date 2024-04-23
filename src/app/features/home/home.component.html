@@ -1,3 +1,95 @@
 <app-section-container>
+<div class="w-100 bg-white">
 
+  <div class="row">
+    <div class="col-12">
+      <app-balance [balance]="balance"></app-balance>
+    </div>
+
+    <div class="col-12 my-4">
+      <app-pie-chart class="row" [days]="days" [single]="pieChartData"></app-pie-chart>
+    </div>
+
+    <div class="mb-3">
+      <app-transactions-list [transactions]="transactions$ | async" (changeIntervalEvent)="changeInterval($event)"></app-transactions-list>
+    </div>
+
+    <div *ngIf="transactions$" class="row justify-content-md-between">
+
+      <div class="good-to-know col-12 col-md-5 my-4 bg-white text-center">
+        <div class="title-info">
+          <h4 class="p-3">Good to know</h4>
+          <i class="zmdi zmdi-favorite-outline"></i>
+        </div>
+
+        <div class="content">
+          <div class="item">
+            <p>Primary currency</p>
+            <h4>{{environment.defaultCurrencyCode}}</h4>
+          </div>
+
+
+          <div class="item">
+            <p>Amount of transactions</p>
+            <h4>{{(transactions$ | async)?.length}}</h4>
+          </div>
+
+          <div class="item">
+            <p>The most used category</p>
+            <h4>{{theMostUsedCategory}}</h4>
+          </div>
+
+          <div class="item">
+            <p>Largest transaction</p>
+            <div class="d-flex justify-content-center align-items-center">
+              <app-transaction-item class="lg-transaction" [transaction]="largestTransaction"></app-transaction-item>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="footer">For the last {{days}} days</p>
+
+      </div>
+
+
+      <div class="home-accounts bg-white col-12 col-md-6 my-4">
+        <div class="title-info">
+          <h4 class="text-center p-3">Accounts</h4>
+          <i class="zmdi zmdi-info-outline"></i>
+        </div>
+
+        <div ngbScrollSpy class="scrollspy p-3 bg-white">
+          <app-account-list  [accounts]="accounts$ | async"></app-account-list>
+        </div>
+        <div class="show-more d-flex justify-content-center py-2 bg-transparent">
+          <button class="btn btn-primary" (click)="showMoreAccount()" >Show more</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 row-cols-lg-2 p-8 mt-3 home-category-charts">
+      <div class="title-info text-center pb-4">
+        <h4 class="px-3">Categories</h4>
+        <i class="zmdi zmdi-info-outline"></i>
+      </div>
+
+      <div>
+        <div class="col-12 col-lg-6 p-0">
+          <app-horizontal-chart [single]="categoryPieChartData"></app-horizontal-chart>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+          <app-simple-pie-chart [dataPC]="categoryPieChartData"></app-simple-pie-chart>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+</div>
 </app-section-container>

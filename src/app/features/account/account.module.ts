@@ -1,6 +1,6 @@
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {AccountItemComponent} from "./account-item/account-item.component";
-import {AccountListComponent} from "./account-list/account-list.component";
+import {AccountPageComponent} from "./account-page/account-page.component";
 import {SectionContainerComponent} from "../../core/components/section-container/section-container.component";
 import {AccountInfoComponent} from "./account-info/account-info.component";
 import {SectionTopbarComponent} from "../../core/components/section-topbar/section-topbar.component";
@@ -18,15 +18,23 @@ import {
 import {PieChartComponent} from "../../shared/components/charts/pie-chart/pie-chart.component";
 import {SimplePieChartComponent} from "../../shared/components/charts/simple-pie-chart/simple-pie-chart.component";
 import {HorizontalChartComponent} from "../../shared/components/charts/horizontal-chart/horizontal-chart.component";
+import {BalanceComponent} from "../../shared/components/common/balance/balance.component";
+import {AccountListComponent} from "./account-list/account-list.component";
 
 
 
 @NgModule({
   declarations: [
     AccountItemComponent,
-    AccountListComponent,
+    AccountPageComponent,
     AccountInfoComponent,
+    AccountListComponent,
     CreateAccountFormComponent,
+  ],
+  exports: [
+    AccountPageComponent,
+    AccountItemComponent,
+    AccountListComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +51,8 @@ import {HorizontalChartComponent} from "../../shared/components/charts/horizonta
     TransactionsListComponent,
     PieChartComponent,
     SimplePieChartComponent,
-    HorizontalChartComponent
+    HorizontalChartComponent,
+    BalanceComponent,
   ]
 })
 export class AccountModule { }

@@ -42,6 +42,28 @@ p {
 a.disabled {
   color: $gray-500 !important;
 }
+//Common
+
+.title-info{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  i{
+    transition: all 0.5s ease;
+    font-size: 2.2rem;
+    color: $gray-500;;
+
+    &:hover{
+      transition: all 0.5s ease;
+      color: $gray;
+    }
+  }
+}
+
+.balance-header {
+  border-radius: 5rem;
+}
 
 //Buttons
 .btn {
@@ -278,12 +300,13 @@ a.disabled {
   }
 }
 
-//--Cards
+//account-item
 
-.card {
+.account-item {
+  border: 2px solid $green-light;
   transition: all 0.3s ease;
   i {
-    font-size: 2rem;
+    font-size: 2em;
   }
   &:hover {
       background-color: $gray-300;
@@ -341,11 +364,8 @@ a.disabled {
 //________________________Account________________________>
 
 .account-body {
-  .account-header {
-    border-radius: 5rem;
-  }
-
   .account-category-charts{
+    padding: 32px;
     border-radius: 1rem;
     border: 2px solid $gray-300;
   }
@@ -382,7 +402,7 @@ input[type="number"] {
 //________________________Transaction block________________________>
 .transaction-block {
   border: 2px solid $gray-300;
-
+  border-radius: 1rem;
   img {
     max-width: 15%;
     height: auto;
@@ -418,12 +438,22 @@ input[type="number"] {
 }
 
 //CHARTS
+
+.advanced-pie{
+  position: relative;
+  left: 30px;
+}
+
 .advanced-pie-legend {
   margin-left: 25px;
   .total-value,
   .total-label,
   .item-percent {
     display: none;
+  }
+  .legend-items{
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -432,6 +462,12 @@ input[type="number"] {
   border-radius: 1rem;
   padding: 0;
   max-height: 150px;
+
+  .info{
+    position: relative;
+    bottom: 25px;
+    color: $gray-500;
+  }
 }
 
 .avatar {
@@ -466,6 +502,86 @@ input[type="number"] {
   max-height: 300px;
   .ngx-charts-outer{
     max-height: 300px;
+  }
+
+}
+
+//---------------------Home-------------------------->
+
+.home-accounts{
+  border: 2px solid $gray-300;
+  border-radius: 1rem;
+
+  .scrollspy{
+    height: 195px;
+  }
+
+  .account-item{
+    box-shadow: none !important;
+  }
+
+}
+
+.home-category-charts{
+  border-radius: 1rem;
+  border: 2px solid $gray-300;
+}
+
+.good-to-know{
+  border: 2px solid $gray-300;
+  border-radius: 1rem;
+
+  .content{
+    height: 75%;
+    color: $gray-500;
+
+    .item{
+      h4{
+        color: $black;
+      }
+      margin-bottom: 8px;
+
+      p{
+        margin-bottom: 4px;
+      }
+
+      img{
+        max-height: 24px;
+      }
+
+      .lg-transaction{
+
+        padding: 4px;
+        width: 75%;
+        //max-width: 250px;
+
+
+        p{
+          display: none;
+        }
+
+        h4{
+          font-size: 1.8rem;
+        }
+        h5{
+          font-size: 1.4rem;
+        }
+
+        .inner{
+          margin: 0 !important;
+          padding: 4px !important;
+          height: 50px;
+          img{
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .footer{
+    color: $gray-500;
   }
 
 }
@@ -524,6 +640,35 @@ input[type="number"] {
   .horizontal-chart{
     display: none;
   }
+  .chart-legend{
+
+    .legend-title{
+      display: none;
+    }
+    .legend-wrap{
+      .legend-labels{
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .legend-label{
+          max-width: 100px;
+        }
+      }
+    }
+  }
+
+  .account-category-charts,
+  .home-category-charts{
+    padding-bottom: 70px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .account-category-charts,
+  .home-category-charts{
+    padding-bottom: 120px !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -564,4 +709,11 @@ input[type="number"] {
       }
     }
   }
+
+  .home-accounts{
+    .scrollspy{
+      height: 215px;
+    }
+  }
+
 }

@@ -3,7 +3,6 @@
     class="p-6 no-content text-gray justify-content-center d-flex text-center">
     <h5 class="w-75">No available activity yet.</h5>
   </div>
-
   <ngx-charts-advanced-pie-chart
     *ngIf="single && single[0]?.value !== 0"
     [results]="single"
@@ -11,4 +10,7 @@
     [scheme]="colorScheme"
   >
   </ngx-charts-advanced-pie-chart>
+  <div *ngIf="days" class="info text-center">
+    <p>For the last {{days}} days</p>
+  </div>
 </div>

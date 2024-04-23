@@ -1,4 +1,4 @@
-import {Component, HostListener, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {LegendPosition, NgxChartsModule} from "@swimlane/ngx-charts";
 
 @Component({
@@ -9,7 +9,7 @@ import {LegendPosition, NgxChartsModule} from "@swimlane/ngx-charts";
   ],
   templateUrl: './simple-pie-chart.component.html'
 })
-export class SimplePieChartComponent {
+export class SimplePieChartComponent{
   @Input()
   dataPC: any;
   animationPC = true;
@@ -22,17 +22,4 @@ export class SimplePieChartComponent {
   legendPosition: LegendPosition = LegendPosition.Below;
   maxLabelLength: number = 10;
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if(event.target.innerWidth < 600){
-      this.labelsPC = true;
-      this.showLegend = false;
-      this.maxLabelLength = 6;
-    }else{
-      this.labelsPC = false;
-      this.showLegend = true;
-      this.maxLabelLength = 10;
-    }
-
-  }
 }
