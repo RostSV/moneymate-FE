@@ -3,10 +3,10 @@ import { environment } from '../../../environments/environment';
 
 export const authCodeFlowConfig: AuthConfig = {
   issuer: environment.keyCloakUrl + '/realms/moneymateAppRealm',
-  redirectUri: environment.appUrl + '/home',
+  redirectUri: environment.appUrl + '/',
   clientId: 'myClient',
   scope: 'openid',
   showDebugInformation: true,
   requireHttps: false,
-  logoutUrl: environment.appUrl + '/welcome',
+  postLogoutRedirectUri: environment.appUrl + '/',
 };

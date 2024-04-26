@@ -29,9 +29,10 @@ export class LandingPageComponent {
   }
 
   login() {
-    if(this.userService.isLoggedIn()){
+    if(this.userService.getUser()){
       this.router.navigate(['/home']);
+    }else{
+      this.userService.login();
     }
-    this.userService.login();
   }
 }

@@ -23,7 +23,6 @@ export class UserService {
   login() {
     this.oauthService.loadDiscoveryDocumentAndLogin().then((value) => {
       this.user$.next(this.oauthService.getIdentityClaims() as UserModel);
-      console.log(this.user$);
     });
   }
 
@@ -36,7 +35,7 @@ export class UserService {
     this.user$.next(undefined);
   }
 
-  isLoggedIn() {
-    return this.oauthService.hasValidAccessToken();
+  getUser() {
+    return this.user$.getValue();
   }
 }
