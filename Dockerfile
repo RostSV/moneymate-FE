@@ -24,7 +24,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy the Angular app to the Nginx webserver's root directory
-COPY --from=build /app/dist/course-quest/browser /usr/share/nginx/html
+COPY --from=build /app/dist/mnmt-front/browser /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
