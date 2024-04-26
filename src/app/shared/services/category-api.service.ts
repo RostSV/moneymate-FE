@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { CategoryModel } from '../models/category.model';
 import { map } from 'rxjs';
 import { CategoryItemComponent } from '../../features/category/category-item/category-item.component';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryApiService {
-  apiUrl = environment.server + '/api/v1/categories';
+  apiUrl = environment.beUrl + '/api/v1/categories';
   constructor(private http: HttpClient) {}
 
   getCategories() {

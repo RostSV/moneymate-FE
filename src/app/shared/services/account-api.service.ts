@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AccountModel } from '../models/account.model';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountApiService {
-  apiUrl = environment.server + '/api/v1/accounts';
+  apiUrl = environment.beUrl + '/api/v1/accounts';
   constructor(private http: HttpClient) {}
 
   getAccounts() {
