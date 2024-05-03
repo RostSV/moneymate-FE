@@ -1,8 +1,8 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
-import { environment } from '../../../environments/environment';
+import {environment} from "../../../environments/environment";
 
 export const authCodeFlowConfig: AuthConfig = {
-  issuer: environment.keyCloakUrl + '/auth/realms/FSA',
+  issuer: environment.keyCloakUrl + '/realms/FSA',
   redirectUri: environment.appUrl + '/',
   clientId: 'myClient',
   scope: 'openid',

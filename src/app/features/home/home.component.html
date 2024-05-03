@@ -34,12 +34,12 @@
             <h4>{{(transactions$ | async)?.length}}</h4>
           </div>
 
-          <div class="item">
+          <div *ngIf="theMostUsedCategory" class="item">
             <p>The most used category</p>
             <h4>{{theMostUsedCategory}}</h4>
           </div>
 
-          <div class="item">
+          <div *ngIf="largestTransaction" class="item">
             <p>Largest transaction</p>
             <div class="d-flex justify-content-center align-items-center">
               <app-transaction-item class="lg-transaction" [transaction]="largestTransaction"></app-transaction-item>
@@ -59,9 +59,10 @@
           <i class="zmdi zmdi-info-outline"></i>
         </div>
 
-        <div ngbScrollSpy class="scrollspy p-3 bg-white">
-          <app-account-list  [accounts]="accounts$ | async"></app-account-list>
+        <div *ngIf="accounts$ | async as accounts" ngbScrollSpy class="scrollspy p-3 bg-white">
+          <app-account-list  [accounts]="accounts"></app-account-list>
         </div>
+
         <div class="show-more d-flex justify-content-center py-2 bg-transparent">
           <button class="btn btn-primary" (click)="showMoreAccount()" >Show more</button>
         </div>
@@ -69,13 +70,13 @@
 
     </div>
 
-    <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 row-cols-lg-2 p-8 mt-3 home-category-charts">
-      <div class="title-info text-center pb-4">
+    <div *ngIf="categoryPieChartData?.length >= 2" class="row row-cols-1 p-8 mt-3 home-category-charts">
+      <div class="title-info text-center pb-4 col-12">
         <h4 class="px-3">Categories</h4>
         <i class="zmdi zmdi-info-outline"></i>
       </div>
 
-      <div>
+      <div class="col-12 row-cols-1 row-cols-lg-2 row">
         <div class="col-12 col-lg-6 p-0">
           <app-horizontal-chart [single]="categoryPieChartData"></app-horizontal-chart>
         </div>

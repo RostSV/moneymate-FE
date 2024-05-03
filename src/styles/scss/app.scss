@@ -234,42 +234,73 @@ a.disabled {
   }
 }
 
-//--Sidebar custom, think of a better way to do this
-.sidebar {
-  margin-top: 60px;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: $yellow;
-  transition: right 0.8s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+//--Sidebar
+.offcanvas{
+    transition: all 0.5s ease-in-out;
+    border-radius: 0 0 1rem 1rem;
+    background-color: $green-light;
+    color: red;
+    height: 420px !important;
 
-  .nav-item {
-    .nav-link {
-      color: white;
-      font-size: 4rem;
-      font-weight: 600;
-      text-shadow: none;
+  .offcanvas-body{
+    position: relative;
+    color: $gray-700;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 
-      &:active {
-        color: #f8ca41ff;
+    .btn-close{
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+    .user{
+      .user-body{
+        max-width: 75%;
+        flex-wrap: wrap;
+
+        p{
+          overflow-wrap: break-word;
+        }
+      }
+      border-bottom: 2px solid $gray-500;
+    }
+
+    .navigation{
+      font-size: 2.4rem;
+      a{
+        i{
+          margin-right: 4px;
+        }
+        &:hover{
+          color: $gray-500;
+          transition: all 0.65s ease;
+        }
+
       }
 
-      i {
-        font-size: 5rem;
+      .logout{
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1.5rem;
+        color: $red-light;
+        font-weight: 500;
+        border:none;
+        background-color: transparent;
+
+        i{
+          margin-left: 4px;
+        }
+
+        &:hover{
+          color: $red-light-500;
+          transition: all 0.65s ease;
+        }
       }
     }
   }
-}
-
-.sidebar.open {
-  right: 0;
-  transition: right 0.8s ease;
 }
 
 //Popover
@@ -462,6 +493,7 @@ input[type="number"] {
   border-radius: 1rem;
   padding: 0;
   max-height: 150px;
+  overflow: hidden;
 
   .info{
     position: relative;

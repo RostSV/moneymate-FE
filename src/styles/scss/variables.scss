@@ -11,10 +11,11 @@ $gray: #4f4f4f;
 
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
+$gray-700: #626262 !default;
 $yellow-500: #d5b038 !default;
 $white-light: #ededed !default;
 $blue-300: #4e8be2 !default;
-
+$red-light-500: #e08a89 !default;
 $grid-gutter-width: 0;
 $enable-shadows: true;
 $box-shadow-lg: 0 0.8rem 3rem rgba(15, 22, 26, 0.1);
@@ -47,7 +48,6 @@ $btn-border-radius: 0.4rem;
 $btn-color: $white !important;
 $btn-disabled-opacity: 0.65;
 $btn-box-shadow: 2px 3px 4px 0px rgba(0,0,0,0.75);
-$btn-link-color:red;
 
   // Dropdowns
 $dropdown-bg: $white;

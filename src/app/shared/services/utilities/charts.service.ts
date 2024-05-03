@@ -77,6 +77,11 @@ export class chartsService {
   }
 
   findLargestTransaction(transactions: TransactionModel[]) {
+
+    if(transactions.length == 0){
+      return undefined;
+    }
+
     return transactions.reduce((prev, current) => {
       return (prev.amount > current.amount) ? prev : current;
     });

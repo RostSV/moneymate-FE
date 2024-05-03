@@ -11,5 +11,5 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'categories', component: CategoryListComponent},
   {path: 'accounts', component: AccountPageComponent},
-  {path: 'accounts/:id', component: AccountInfoComponent},
+  {path: 'accounts/:id', component: AccountInfoComponent}
 ];

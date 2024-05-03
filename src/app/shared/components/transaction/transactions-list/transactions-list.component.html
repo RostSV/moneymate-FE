@@ -22,6 +22,7 @@
         id="weekBtn"
         class="btn btn-sm btn-info px-3"
         [class.active]="days === environment.week"
+        [disabled]="days === environment.week"
         (click)="changeInterval(environment.week)"
       >
         7D
@@ -31,6 +32,7 @@
         id="monthBtn"
         class="btn btn-sm btn-info px-3"
         [class.active]="days === environment.month"
+        [disabled]="days === environment.month"
         (click)="changeInterval(environment.month)"
       >
         30D
@@ -40,6 +42,7 @@
         id="quarterBtn"
         class="btn btn-sm btn-info px-3"
         [class.active]="days === environment.quarter"
+        [disabled]="days === environment.quarter"
         (click)="changeInterval(environment.quarter)"
       >
         90D
