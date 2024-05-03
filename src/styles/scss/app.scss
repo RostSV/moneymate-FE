@@ -468,6 +468,20 @@ input[type="number"] {
   }
 }
 
+//________________________NotFound_______________________>
+
+.not-found{
+  height: 85vh;
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+   .btn{
+     max-width: 200px;
+     max-height: 40px;
+   }
+}
+
 //CHARTS
 
 .advanced-pie{
