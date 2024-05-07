@@ -435,7 +435,7 @@ input[type="number"] {
   border: 2px solid $gray-300;
   border-radius: 1rem;
   img {
-    max-width: 15%;
+    max-width: 12%;
     height: auto;
     width: auto;
   }
@@ -467,6 +467,85 @@ input[type="number"] {
     }
   }
 }
+
+.transaction{
+  transition: all 0.4s linear;
+  .category{
+    color: $gray-500;
+  }
+
+  &:hover{
+    background-color: $gray-300;
+  }
+}
+
+//__________________________Transaction Info________________________>
+.transaction-info{
+  padding-bottom: 30px;
+  border-radius: 1rem;
+
+  .modal-header{
+    border: 0;
+  }
+
+  .btn-close:focus{
+    color: $gray-500;
+    box-shadow: none;
+  }
+
+  h5{
+    span{
+      font-weight: 300;
+      color: $black;
+    }
+  }
+
+  .modal-body{
+    border: 0;
+    width: 85%;
+    height: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .amount{
+      font-size: 25px;
+      width: 85%;
+    }
+    .expense{
+      color: $red-light;
+      &:before{
+        content: '-';
+        position: relative;
+        left: 4px;
+      }
+    }
+
+    .inner{
+      border-top: 2px solid $gray-500;
+      .description{
+        color: $gray-500;
+        font-weight: 400;
+      }
+
+
+
+      .date{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.modal-content{
+  border: 0;
+}
+
+
+
 
 //________________________NotFound_______________________>
 
@@ -628,6 +707,11 @@ input[type="number"] {
           img{
             padding-left: 8px;
           }
+
+          .category{
+            display: none;
+            color: transparent;
+          }
         }
       }
     }
@@ -764,6 +848,13 @@ input[type="number"] {
   .account-category-charts,
   .home-category-charts{
     padding-bottom: 120px !important;
+  }
+
+}
+
+@media (min-width: 375px) {
+  .amount{
+    padding-left: 20px;
   }
 }
 

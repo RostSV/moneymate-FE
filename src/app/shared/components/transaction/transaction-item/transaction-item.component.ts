@@ -3,6 +3,8 @@ import { TransactionModel } from '../../../models/transaction.model';
 import { TransactionType } from '../../../models/transaction-type.enum';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { TimeDatePipe } from '../../../time-date.pipe';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {TransactionInfoComponent} from "../../../modals/transaction-info/transaction-info.component";
 
 @Component({
   selector: 'app-transaction-item',
@@ -14,4 +16,12 @@ export class TransactionItemComponent {
   @Input()
   transaction: TransactionModel | undefined;
   protected readonly TransactionType = TransactionType;
+
+  constructor(private modalService: NgbModal) {
+  }
+
+  openInfo() {
+    const modalRef = this.modalService.open(TransactionInfoComponent, { centered: true });
+    modalRef.componentInstance.transaction = this.transaction;
+  }
 }

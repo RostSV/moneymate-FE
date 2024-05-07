@@ -1,0 +1,21 @@
+<div *ngIf="transaction" class="bg-primary transaction-info" (click)="close()">
+  <div class="modal-header text-white justify-content-center">
+    <h3 class="modal-title">Transaction</h3>
+  </div>
+  <div class="modal-body">
+    <div class="mb-2 text-center d-flex justify-content-center">
+      <h4 class="amount p-2" [class.expense]="transaction.type == 'EXPENSE'">
+        {{transaction.amount | currency:'':''}}
+        <span class="text-black">{{transaction.currency?.code}}</span>
+      </h4>
+    </div>
+
+    <div class="inner d-flex justify-content-center flex-column mb-8">
+      <h5 class="mb-2 mt-4"><span>Account: </span>{{transaction.assignedTo?.name}}</h5>
+      <h5 class="mb-2"><span>Category: </span>{{transaction.category?.name}}</h5>
+      <h5 *ngIf="transaction.description" class="description "><span>Description:</span> {{transaction.description}}</h5>
+      <h5 class="date ">{{transaction.createdOn | date:'short'}}</h5>
+    </div>
+
+  </div>
+</div>
