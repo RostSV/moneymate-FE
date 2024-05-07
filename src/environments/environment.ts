@@ -1,5 +1,5 @@
 export const environment = {
-  keyCloakUrl: 'http://13.79.95.167/auth',
-  beUrl: 'http://13.79.95.167',
-  appUrl: 'http://13.79.95.167',
+  keyCloakUrl: 'http://52.169.188.1/auth',
+  beUrl: 'http://52.169.188.1',
+  appUrl: 'http://52.169.188.1',
 };
