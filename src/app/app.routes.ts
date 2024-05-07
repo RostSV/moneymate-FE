@@ -7,11 +7,11 @@ import {AccountInfoComponent} from "./features/account/account-info/account-info
 import {NotfoundComponent} from "./core/components/notfound/notfound.component";
 
 export const routes: Routes = [
-  {path: 'welcome', component: LandingPageComponent},
-  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'welcome', component: LandingPageComponent},
   {path: 'categories', component: CategoryListComponent},
   {path: 'accounts', component: AccountPageComponent},
   {path: 'accounts/:id', component: AccountInfoComponent},
+  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ];

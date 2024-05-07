@@ -21,6 +21,7 @@ import {HorizontalChartComponent} from "../../shared/components/charts/horizonta
 import {
   TransactionItemComponent
 } from "../../shared/components/transaction/transaction-item/transaction-item.component";
+import {TipComponent} from "../../shared/components/tip/tip.component";
 
 @Component({
   selector: 'app-home',
@@ -44,6 +45,7 @@ import {
     HorizontalChartComponent,
     CurrencyPipe,
     TransactionItemComponent,
+    TipComponent,
   ],
   templateUrl: './home.component.html',
 })

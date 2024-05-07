@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {SectionContainerComponent} from "../section-container/section-container.component";
 import {Router} from "@angular/router";
+import {UserService} from "../../../user.service";
 
 @Component({
   selector: 'app-notfound',
@@ -12,10 +13,14 @@ import {Router} from "@angular/router";
 })
 export class NotfoundComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService : UserService) {
   }
 
   goHome() {
-    this.router.navigate(['/home']);
+    if (this.userService.getUser()) {
+      this.router.navigate(['/home']);
+    }else {
+      this.router.navigate(['/']);
+    }
   }
 }
