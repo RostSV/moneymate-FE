@@ -685,7 +685,7 @@ input[type="number"] {
       .lg-transaction{
 
         padding: 4px;
-        width: 75%;
+        width: 85%;
         max-width: 320px;
 
 
@@ -862,6 +862,13 @@ input[type="number"] {
 
   .tip-of-the-day{
     display: block;
+  }
+
+  .lg-transaction{
+    .category{
+      display: none;
+      color: transparent;
+    }
   }
 
   .category-item {
